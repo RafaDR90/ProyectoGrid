@@ -1,23 +1,31 @@
-header{
-    width: 100vw;
-    background-color: aquamarine;
-    height: 10vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: space-between;
+header {
+  z-index: 7;
+  width: 100vw;
+  height:min-content;
+  box-shadow: 5px 5px 10px var(--color-black);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "menu logo login"; 
+  position:sticky ;
+  top: 0;
+  background-color: var(--color-white);
+}
+header button{
+  font-size: 2vw;
 }
 .menuHamburguesaContainer {
-    width: 3vw;
-    background-color: red;
-    height: 3vw;
+    margin: 1vw;
+    grid-area: menu; 
+    width: var(--menu-size-header);
+    height: var(--menu-size-header);
     align-items: center;
     justify-content: center;
     cursor: pointer;
   }
   
   .barras__MenuAmburguesa {
+    margin-left: 0.5vw;
     position: inherit;
-    background-color: yellow;
     display: flex;
     flex-direction: column;
     width:100%;
@@ -53,17 +61,18 @@ header{
     
   }
   .menuHamburguesaContainer:hover .listaMenu {
-    background-color: aqua;
+    z-index: 5;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: fixed;
     top:0;
     left:0;
-    width: 32vw;
+    width: var(--listaMenu-size-header);
     height: 100vh;
     animation: despliegaMenu 1s ease forwards;
-    border: solid gray;
+    box-shadow: 5px 5px 10px var(--color-black-transparent);
   }
   @keyframes despliegaMenu {
     from{
@@ -79,7 +88,90 @@ header{
     height: 2vw;
   }
   .color{
-    background-color: blue;
     width: 100%;
     height: 100%;
   }
+ 
+
+.lista_menuHamburguesa {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lista_menuHamburguesa li {
+  margin-bottom: 13vh; 
+}
+
+.lista_menuHamburguesa a {
+  text-decoration: none;
+  color: #333;
+  font-size: var(--font-size-header);
+  transition: color 0.3s;
+}
+
+.lista_menuHamburguesa a:hover {
+  color: var(--color-NaranjaSeleccion);
+}
+.logoPrincipalContainer{
+  align-self: center;
+  justify-self: center;
+  width: var(--logo-size-header);
+  grid-area: logo; /* Asignar el área 'logo' al contenedor del logo */
+  text-align: center;
+}
+
+
+.logoPrincipalContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.menuLoginContainer{
+  grid-area: login;
+  width: 20vw;
+  height: 15vh;
+  margin-right: var(--carrito-margin-header);
+  display: flex;
+  justify-self: end;
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.linkCarrito{
+  width: var(--size-iconos-header);
+  margin-left: 1vw;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-right: 2vw;
+}
+.linkCarrito img:hover{
+  padding: 0.3vw;
+  border-radius: 40px;
+  box-shadow: 0 0 10px var(--color-black); /* Agrega sombreado con color semi-transparente */
+
+}
+.linkCarrito img{
+  width: 100%;
+  height: auto;
+}
+.linksNav {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  padding: 0.5vw 0.5vw; 
+  font-size: var(--font-size-header)-1; 
+  font-weight: bold; 
+  margin-right: 2vw;
+  transition: background-color 0.3s; 
+  cursor: pointer; 
+}
+
+.linksNav:hover {
+  color: var(--color-NaranjaSeleccion);
+  box-shadow: 0 0 10px var(--color-black); 
+
+}
