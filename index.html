@@ -4,66 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GridProyect</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./app.js">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import app from './app.js';
+      
+        window.onload = () => {
+          createApp({
+            components: {
+              app,
+            },
+          }).mount('#app');
+        };
+    </script>
     <link rel="stylesheet" href="./Styles/Normalize.css">
     <link rel="stylesheet" href="./Styles/Variables.css">
     <link rel="stylesheet" href="./Styles/Header.css">
     <link rel="stylesheet" href="./Styles/Carrusel.css">
     <link rel="stylesheet" href="./Styles/ItemsContainer.css">
     <link rel="stylesheet" href="./Styles/Main.css">
-    <script>
-        window.onload = () => {
-        const carrusel = document.querySelector('.carrusel-wrapper');
-        let currentIndex = 0;
-        let intervalId;
-        const startInterval = () => {
-            intervalId = setInterval(() => {
-                currentIndex = (currentIndex + 1) % carrusel.children.length;
-                carrusel.style.transform = `translateX(${-currentIndex * 100}%)`;
-            }, 4000);
-        };
-        carrusel.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % carrusel.children.length;
-            carrusel.style.transform = `translateX(${-currentIndex * 100}%)`;
-            clearInterval(intervalId);
-            startInterval();
-        });
-        startInterval();
-        
-
-        const main = document.querySelector('main');
-        const hombreSection = document.getElementById('hombre');
-        const mujerSection = document.getElementById('mujer');
-        const principalSection = document.getElementById('principal');
-
-        const buttonHombre = document.getElementById('buttonHombre');
-        const buttonMujer = document.getElementById('buttonMujer');
-        const buttonInicio = document.querySelectorAll('.buttonInicio');
-
-        buttonHombre.addEventListener('click', () => {
-            principalSection.style.display = 'none';
-            mujerSection.style.display = 'none';
-            hombreSection.style.display = 'block';
-        });
-
-        buttonMujer.addEventListener('click', () => {
-            principalSection.style.display = 'none';
-            hombreSection.style.display = 'none';
-            mujerSection.style.display = 'block';
-        });
-        buttonInicio.forEach(element => {
-            element.addEventListener('click', () => {
-            hombreSection.style.display = 'none';
-            mujerSection.style.display = 'none';
-            principalSection.style.display = 'block';
-            });
-        });
-        
-
-    }
-    </script>
+    <script src="./app.js"></script>
 
 </head>
-<body>
+<body id="app">
     <header>
         <div class="menuHamburguesaContainer">
             <div class="barras__MenuAmburguesa">
@@ -107,115 +70,11 @@
         <section id="hombre" class="itemsSection">
             <h2 class="tituloSection" >Coleccion hombre</h2>
             <div class="itemsContainer">
-                <div class="card">
-                    <img src="./Img/ropa/hombre/imagen 2.png" alt="Producto">
+                <div class="card" v-for="(item, index) in productos" :key="index">
+                    <img :src="'./Img/ropa/json/'+item.img[0]" alt="Producto">
                     <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/imagen 4.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/imagen 6.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/imagen 8.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h1.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h10.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h2.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h3.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h4.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h5.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h6.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h7.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h8.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/hombre/h9.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
+                        <div class="card-title">{{item.titulo}}</div>
+                        <div class="card-price">{{item.precio}}€</div>
                         <button class="buy-button">Comprar</button>
                     </div>
                 </div>

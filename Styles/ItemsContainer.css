@@ -22,9 +22,10 @@
 
 .itemsContainer {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px; /* Espacio entre las columnas y filas */
-}
+    grid-template-columns: repeat(4, minmax(2rem,min-content));
+    gap: 36px; /* Espacio entre las columnas y filas */
+    justify-content: center;
+    }
 
 .card {
     position: relative;
@@ -33,7 +34,7 @@
     overflow: hidden;
     width: 300px;
     box-shadow: 0 4px 8px var(--color-black);
-    margin: 1vw;
+   
 }
 
 .card img {
@@ -85,26 +86,24 @@
 
 @media only screen and (max-width: 1400px) {
     .itemsContainer {
-        grid-template-columns: repeat(4, 1fr);
-    }
+        grid-template-columns: repeat(3, minmax(2rem,min-content));    }
 }
 @media only screen and (max-width: 1200px) {
     .itemsContainer {
-        grid-template-columns: repeat(3, 1fr);
-    }
+        grid-template-columns: repeat(2, minmax(2rem,min-content));    }
 }
 @media only screen and (max-width: 900px) {
     .itemsContainer {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(2rem,min-content));
     }
 }
 @media only screen and (max-width: 768px) {
     .itemsContainer {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, minmax(2rem,min-content));
     }
 }
 @media only screen and (max-width: 600px) {
     .itemsContainer {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, minmax(2rem,min-content));
     }
 }

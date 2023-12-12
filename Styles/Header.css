@@ -111,7 +111,7 @@ header button{
   transition: color 0.3s;
 }
 
-.lista_menuHamburguesa a:hover {
+.lista_menuHamburguesa button:hover {
   color: var(--color-NaranjaSeleccion);
 }
 .logoPrincipalContainer{
@@ -171,7 +171,6 @@ header button{
 }
 
 .linksNav:hover {
-  color: var(--color-NaranjaSeleccion);
-  box-shadow: 0 0 10px var(--color-black); 
+  box-shadow: 0 0 20px var(--color-black); 
 
 }
