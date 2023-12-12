@@ -1,0 +1,80 @@
+.detalleContainer {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.tituloDetalle {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--color-black);
+    margin-left: 1vw;
+}
+
+.detalleDescripcion {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: var(--color-darkGrey);
+    align-self: left;
+    margin-left: 1vw;
+}
+
+.containerImg {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.containerImg img {
+    width: 20vw;
+    height: 26vw;
+    border: 2px solid var(--color-black-transparent);
+}
+
+.labelTalla {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    margin-left: 1vw;
+}
+
+.precio {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--color-NaranjaSeleccion);
+    margin-left: 1vw; 
+}
+
+.tallas{
+    margin-left: 1vw;
+}
+.tallas span {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: var(--color-black-transparent) 1px solid;
+    border-radius: 5px;
+    color: var(--color-black);
+}
+
+.buttonAddCar {
+    display: flex;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--color-black);
+    color: white;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.buttonAddCar:hover {
+    background-color: var(--color-NaranjaSeleccion);
+    box-shadow: 0 0 20px var(--color-NaranjaSeleccion);
+}

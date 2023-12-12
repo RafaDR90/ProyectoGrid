@@ -97,14 +97,16 @@ header button{
   list-style: none;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .lista_menuHamburguesa li {
-  margin-bottom: 13vh; 
+  margin-bottom: 13vh;
+  margin-right: 3vw; 
 }
 
-.lista_menuHamburguesa a {
+.lista_menuHamburguesa button {
   text-decoration: none;
   color: #333;
   font-size: var(--font-size-header);

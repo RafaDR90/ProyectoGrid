@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./Styles/Carrusel.css">
     <link rel="stylesheet" href="./Styles/ItemsContainer.css">
     <link rel="stylesheet" href="./Styles/Main.css">
+    <link rel="stylesheet" href="./Styles/Detalle.css">
     <script src="./app.js"></script>
 
 </head>
@@ -36,21 +37,21 @@
             </div>
             <div class="listaMenu">
                 <ul class="lista_menuHamburguesa">
-                    <li><button class="buttonInicio">Inicio</button></li>
-                    <li><button id="buttonHombre">Hombre</button></li>
-                    <li><button id="buttonMujer">Mujer</button></li>
-                    <li><button id="buttonComplementos">Complementos</button></li>
+                    <li><button @click="changuePage('principal')" class="buttonInicio">Inicio</button></li>
+                    <li><button @click="changuePage('hombre')" id="buttonHombre">Hombre</button></li>
+                    <li><button @click="changuePage('mujer')" id="buttonMujer">Mujer</button></li>
+                    <li><button @click="changuePage('complementos')" id="buttonComplementos">Complementos</button></li>
                 </ul>
             </div>
         </div>
-        <div class="logoPrincipalContainer"><button class="buttonInicio" class="enlace__LogoPrincipal" ><img src="./Img/fashionLogo.png" alt="Logo"></button></div>
+        <div class="logoPrincipalContainer"><button class="buttonInicio" class="enlace__LogoPrincipal" ><img @click="changuePage('principal')" src="./Img/fashionLogo.png" alt="Logo"></button></div>
         <div class="menuLoginContainer">
             <a class="linksNav" href="">Login</a>
             <a class="linkCarrito" href=""><img src="./Img/carrito.png" alt=""></a>
         </div>
     </header>
     <main>
-        <section id="principal">
+        <section v-if="pagina=='principal'" id="principal">
             <section class="carrusel">
                 <div class="carrusel-wrapper">
                     <div class="carrusel-item"><p class="textoImagen">Coleccion otoño 2023</p><img src="./Img/ropa/mujer/imagen 1.jpg" alt="Imagen 1"></div>
@@ -67,7 +68,7 @@
                 </div>
             </section>
         </section>
-        <section id="hombre" class="itemsSection">
+        <section v-if="pagina=='hombre'" id="hombre" class="itemsSection">
             <h2 class="tituloSection" >Coleccion hombre</h2>
             <div class="itemsContainer">
                 <div class="card" v-for="(item, index) in productos" :key="index">
@@ -75,12 +76,12 @@
                     <div class="card-content">
                         <div class="card-title">{{item.titulo}}</div>
                         <div class="card-price">{{item.precio}}€</div>
-                        <button class="buy-button">Comprar</button>
+                        <button @click="mostrarDetalle(item.id)" class="buy-button">Ver mas</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="mujer" class="itemsSection">
+        <section v-if="pagina=='mujer'" id="mujer" class="itemsSection">
             <h2 class="tituloSection" >Coleccion mujer</h2>
             <div class="itemsContainer">
                 <div class="card">
@@ -88,7 +89,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -96,7 +97,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -104,7 +105,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -112,7 +113,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -120,7 +121,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -128,7 +129,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -136,7 +137,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -144,7 +145,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -152,7 +153,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -160,7 +161,7 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
                 <div class="card">
@@ -168,12 +169,23 @@
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
                         <div class="card-price">$19.99</div>
-                        <button class="buy-button">Comprar</button>
+                        <button class="buy-button">Ver mass</button>
                     </div>
                 </div>
             </div>
         </section>
-        
+        <section v-if="pagina=='detalle'" class="detalleContainer">
+            <h2 class="tituloDetalle" v-if="detalleProducto!=null">{{detalleProducto.titulo}}</h2>
+            <p class="detalleDescripcion" v-if="detalleProducto!=null">{{detalleProducto.descripcion}}</p>
+            <div class="containerImg">
+                <img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[0]" alt="Imagen producto">
+                <img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[1]" alt="Imagen producto">
+            </div>
+            <p class="labelTalla">Tallas disponibles:</p>
+            <p class="tallas"><span v-if="detalleProducto!=null" v-for="(item, index) in detalleProducto.talla" :key="index">{{item}}</span></p>
+            <p class="precio" v-if="detalleProducto!=null">{{detalleProducto.precio}}</p>
+            <button class="buttonAddCar">Añadir al carrito</button>
+        </section>
     </main>
     <footer></footer>
     

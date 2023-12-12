@@ -1,11 +1,12 @@
 :root {
     --color-black: black;
     --color-black-transparent:rgba(0, 0, 0, 0.562);
+    --color-darkGrey:rgb(59, 59, 59);
     --color-white: white;
     --color-NaranjaSeleccion: #ff4500;
     --logo-size-header: 10vw;
     --menu-size-header: 3vw;
-    --font-size-header: 2vw;
+    --font-size-header: clamp(2rem, 4vw, 2.5rem);
     --listaMenu-size-header:20vw;
     --carrito-margin-header:2vw;
     --size-iconos-header:50px;
@@ -16,7 +17,7 @@
       --logo-size-header: 15vw;
       --menu-size-header: 8vw;
       --font-size-header: 4vw;
-      --color-black: yellow;
+      --color-black: black;
       --listaMenu-size-header:35vw;
       --carrito-margin-header:5vw;
       --size-iconos-header:35px;

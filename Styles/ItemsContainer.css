@@ -23,16 +23,18 @@
 .itemsContainer {
     display: grid;
     grid-template-columns: repeat(4, minmax(2rem,min-content));
-    gap: 36px; /* Espacio entre las columnas y filas */
+    /*grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));*/
+    gap: 36px;
     justify-content: center;
-    }
+}
 
 .card {
     position: relative;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;
+    width: 20rem ;
+    height: 35rem;
     box-shadow: 0 4px 8px var(--color-black);
    
 }
@@ -72,13 +74,12 @@
     text-align: center;
     text-decoration: none;
     border: none;
-    border-top: 1px solid #ccc;
     cursor: pointer;
 }
 
 .buy-button:hover {
-    box-shadow: 0 4px 8px var(--color-black);
-    color: var(--color-NaranjaSeleccion);
+    box-shadow: 0 0px 20px var(--color-NaranjaSeleccion);
+    background-color: var(--color-NaranjaSeleccion);
 }
 
 /* Responsive styles */

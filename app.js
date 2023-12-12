@@ -91,13 +91,25 @@ window.onload = () => {
           data() {
             return{
                 productos:[],
+                pagina:'principal',
+                detalleProducto:null,
             }
           },
           methods: {
+            changuePage(pagina){
+              this.pagina=pagina
+            },
+            mostrarDetalle(id){
+              const producto=this.productos.find((producto) => producto.id === id)
+              console.log(producto)
+              this.detalleProducto=producto;
+              this.pagina="detalle";
+            }
           },
           mounted() {
             this.productos=productosJSON.productos;
             console.log(this.productos)
+
           },
         }).mount('#app');
     
@@ -122,33 +134,6 @@ window.onload = () => {
     startInterval();
     
 
-    const main = document.querySelector('main');
-    const hombreSection = document.getElementById('hombre');
-    const mujerSection = document.getElementById('mujer');
-    const principalSection = document.getElementById('principal');
-
-    const buttonHombre = document.getElementById('buttonHombre');
-    const buttonMujer = document.getElementById('buttonMujer');
-    const buttonInicio = document.querySelectorAll('.buttonInicio');
-
-    buttonHombre.addEventListener('click', () => {
-        principalSection.style.display = 'none';
-        mujerSection.style.display = 'none';
-        hombreSection.style.display = 'block';
-    });
-
-    buttonMujer.addEventListener('click', () => {
-        principalSection.style.display = 'none';
-        hombreSection.style.display = 'none';
-        mujerSection.style.display = 'block';
-    });
-    buttonInicio.forEach(element => {
-        element.addEventListener('click', () => {
-        hombreSection.style.display = 'none';
-        mujerSection.style.display = 'none';
-        principalSection.style.display = 'block';
-        });
-    });
     
 
 }
