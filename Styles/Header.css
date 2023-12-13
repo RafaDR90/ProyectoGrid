@@ -60,7 +60,7 @@ header button{
     
     
   }
-  .menuHamburguesaContainer:hover .listaMenu {
+  .menuHamburguesaContainer:hover  .listaMenu {
     z-index: 5;
     background-color: white;
     display: flex;
@@ -120,7 +120,7 @@ header button{
   align-self: center;
   justify-self: center;
   width: var(--logo-size-header);
-  grid-area: logo; /* Asignar el área 'logo' al contenedor del logo */
+  grid-area: logo; 
   text-align: center;
 }
 
@@ -152,7 +152,7 @@ header button{
 .linkCarrito img:hover{
   padding: 0.3vw;
   border-radius: 40px;
-  box-shadow: 0 0 10px var(--color-black); /* Agrega sombreado con color semi-transparente */
+  box-shadow: 0 0 10px var(--color-black); 
 
 }
 .linkCarrito img{

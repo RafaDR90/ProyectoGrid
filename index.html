@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="./Styles/ItemsContainer.css">
     <link rel="stylesheet" href="./Styles/Main.css">
     <link rel="stylesheet" href="./Styles/Detalle.css">
+    <link rel="stylesheet" href="./Styles/Principal.css">
     <script src="./app.js"></script>
 
 </head>
@@ -52,6 +53,7 @@
     </header>
     <main>
         <section v-if="pagina=='principal'" id="principal">
+            <div class="bannerOfertaNavidad"><button>Ver ofertas</button></div>
             <section class="carrusel">
                 <div class="carrusel-wrapper">
                     <div class="carrusel-item"><p class="textoImagen">Coleccion otoño 2023</p><img src="./Img/ropa/mujer/imagen 1.jpg" alt="Imagen 1"></div>
@@ -67,6 +69,41 @@
                     <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/mujer/imagen 9.png" alt="Imagen 11"></div>
                 </div>
             </section>
+            <div v-if="productos" class="ofertaPrenda">
+                    <div class="imgOfertaIz">
+                        <img src="Img/ropa/json/h4.jpg" alt="Imagen de prenda en oferta">
+                    </div>
+                    <div class="infoOfertaIz" >
+                        <div class="infoOfertaTop">
+                            <h2>{{ productos[3] ? productos[3].titulo : 'N/A' }}</h2>
+                            <h4>{{ productos[3] ? productos[3].descripcion : 'N/A' }}</h4>
+                        </div>
+                        <div class="infoOfertaBot">
+                            <h2 class="porcentageOferta" >¡20% de descuento!</h3>
+                            <p class="precio">{{ productos[3] ? productos[3].precio : 'N/A' }}</p>
+                            <button class="comprar-button">Comprar</button>
+                        </div>
+                    </div>
+            </div>
+
+            <div v-if="productos" class="ofertaPrenda">
+                <div class="imgOfertaDer">
+                    <img src="Img/ropa/json/h6.jpg" alt="Imagen de prenda en oferta">
+                </div>
+                <div class="infoOfertaDer" >
+                    <div class="infoOfertaTop">
+                        <h2>{{ productos[5] ? productos[5].titulo : 'N/A' }}</h2>
+                        <h4>{{ productos[5] ? productos[5].descripcion : 'N/A' }}</h4>
+                    </div>
+                    <div class="infoOfertaBot">
+                        <h2 class="porcentageOferta" >¡30% de descuento!</h3>
+                        <p class="precio">{{ productos[5] ? productos[5].precio : 'N/A' }}</p>
+                        <button class="comprar-button">Comprar</button>
+                    </div>
+                </div>
+        </div>
+
+
         </section>
         <section v-if="pagina=='hombre'" id="hombre" class="itemsSection">
             <h2 class="tituloSection" >Coleccion hombre</h2>
@@ -175,11 +212,12 @@
             </div>
         </section>
         <section v-if="pagina=='detalle'" class="detalleContainer">
+            <div @click="changuePage('hombre')" class="iconoBack"><div class="iconoBack__img__container"><img src="./Img/back.png" alt="Volver"></div>Volver</div></div>
             <h2 class="tituloDetalle" v-if="detalleProducto!=null">{{detalleProducto.titulo}}</h2>
             <p class="detalleDescripcion" v-if="detalleProducto!=null">{{detalleProducto.descripcion}}</p>
-            <div class="containerImg">
-                <img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[0]" alt="Imagen producto">
-                <img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[1]" alt="Imagen producto">
+            <div class="containerImgs">
+                <div class="containerImg"><img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[0]" alt="Imagen producto"></div>
+                <div class="containerImg"><img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[1]" alt="Imagen producto"></div>
             </div>
             <p class="labelTalla">Tallas disponibles:</p>
             <p class="tallas"><span v-if="detalleProducto!=null" v-for="(item, index) in detalleProducto.talla" :key="index">{{item}}</span></p>

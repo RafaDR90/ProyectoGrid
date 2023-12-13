@@ -1,5 +1,5 @@
 .detalleContainer {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -23,17 +23,22 @@
     margin-left: 1vw;
 }
 
-.containerImg {
+.containerImgs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
 }
-
-.containerImg img {
+.containerImg{
+    min-width: 15rem;
     width: 20vw;
+    min-height: 20rem;
     height: 26vw;
     border: 2px solid var(--color-black-transparent);
+}
+.containerImg img {
+   width: 100%;
+   height: 100%;
 }
 
 .labelTalla {
@@ -59,6 +64,10 @@
     border: var(--color-black-transparent) 1px solid;
     border-radius: 5px;
     color: var(--color-black);
+    cursor: pointer;
+}
+.tallas span:hover {
+    background-color: var(--color-grisClaro);
 }
 
 .buttonAddCar {
@@ -77,4 +86,25 @@
 .buttonAddCar:hover {
     background-color: var(--color-NaranjaSeleccion);
     box-shadow: 0 0 20px var(--color-NaranjaSeleccion);
+}
+.iconoBack{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.iconoBack p{
+    font-weight: bold;
+}
+.iconoBack:hover{
+    color: var(--color-NaranjaSeleccion);
+}
+
+.iconoBack__img__container{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.iconoBack__img__container img{
+    width: 100%;
+    height: 100%;
 }

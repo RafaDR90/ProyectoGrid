@@ -4,12 +4,16 @@
     --color-darkGrey:rgb(59, 59, 59);
     --color-white: white;
     --color-NaranjaSeleccion: #ff4500;
+    --color-grisClaro:rgb(221, 221, 221);
+    --color-rojoOferta:rgb(204, 0, 0);
     --logo-size-header: 10vw;
     --menu-size-header: 3vw;
     --font-size-header: clamp(2rem, 4vw, 2.5rem);
     --listaMenu-size-header:20vw;
     --carrito-margin-header:2vw;
     --size-iconos-header:50px;
+
+    --color-hoverNavideño:#00ff00;
   }
   
   @media (max-width: 768px) {

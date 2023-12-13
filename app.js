@@ -133,7 +133,4 @@ window.onload = () => {
     });
     startInterval();
     
-
-    
-
 }
