@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./Styles/Detalle.css">
     <link rel="stylesheet" href="./Styles/Principal.css">
     <link rel="stylesheet" href="./Styles/Footer.css">
+    <link rel="stylesheet" href="./Styles/Login.css">
     <script src="./app.js"></script>
 
 </head>
@@ -48,7 +49,7 @@
         </div>
         <div class="logoPrincipalContainer"><button class="buttonInicio" class="enlace__LogoPrincipal" ><img @click="changuePage('principal')" src="./Img/fashionLogo.png" alt="Logo"></button></div>
         <div class="menuLoginContainer">
-            <a class="linksNav" href="">Login</a>
+            <button @click="changuePage('login')" class="linksNav" href="">Login</button>
             <a class="linkCarrito" href=""><img src="./Img/carrito.png" alt=""></a>
         </div>
     </header>
@@ -104,6 +105,32 @@
                 </div>
         </div>
         </section>
+        <section v-if="pagina=='login'" id="login-section">
+            <div class="login-container">
+                <div class="login-form">
+                    <h2>¿Tienes una cuenta?</h2>
+                    <form id="formLogin">
+                        <input type="email" class="login-input" placeholder="Email" required>
+                        <input type="password" class="login-input" placeholder="Contraseña" required>
+                        <button type="submit" class="login-btn">Iniciar Sesión</button>
+                    </form>
+                </div>
+                <div class="register-form">
+                    <h2>¿Aún no tienes una cuenta?</h2>
+                    <form id="formRegister">
+                        <input type="text" class="register-input" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" placeholder="Nombre" required>
+                        <input type="text" class="register-input" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" placeholder="Apellidos" required>
+                        <input type="email" class="register-input" placeholder="Email" required>
+                        <input type="password" class="register-input" placeholder="Contraseña" required>
+                        <input type="password" class="register-input" placeholder="Verificar Contraseña" required>
+                        <button type="submit" class="register-btn">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        
+        
         <section v-if="pagina=='hombre'" id="hombre" class="itemsSection">
             <div class="migasDePan"><button @click="changuePage('principal')">Inicio </button></div>
             <h2 class="tituloSection" >Coleccion hombre</h2>
