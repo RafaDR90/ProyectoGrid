@@ -32,6 +32,7 @@
 /*OFERETA PRENDA IZQUIERDA*/
 
 .ofertaPrenda {
+  margin-top: 2vh;
     width: 100%;
     display: grid;
     grid-template-columns: 10% 40% 40% 10%;
@@ -56,7 +57,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30%;
+    gap: 5%;
     grid-column: 3 / 4; 
     grid-row: 1 / 2; 
   }
@@ -74,8 +75,8 @@
   
   
   .comprar-button:hover {
-    background-color: var(--color-NaranjaSeleccion); 
-    box-shadow: 0 0 20px var(--color-NaranjaSeleccion);
+    background-color: var(--color-darkGrey); 
+    box-shadow: 0 0 20px var(--color-black);
   }
   
   
@@ -85,7 +86,7 @@
   
   
   .porcentajeOferta {
-    color: red; 
+    color: var(--color-rojoOferta); 
     font-weight: bold; 
   }
   .imgOfertaDer {
@@ -104,7 +105,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30%;
+    gap: 5%;
     grid-column: 2 / 3; 
     grid-row: 1 / 2; 
   }

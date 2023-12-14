@@ -9,17 +9,15 @@ header {
   position:sticky ;
   top: 0;
   background-color: var(--color-white);
+  align-items: center;
 }
 header button{
   font-size: 2vw;
 }
 .menuHamburguesaContainer {
-    margin: 1vw;
     grid-area: menu; 
     width: var(--menu-size-header);
     height: var(--menu-size-header);
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
   }
   
@@ -28,17 +26,17 @@ header button{
     position: inherit;
     display: flex;
     flex-direction: column;
-    width:100%;
+    width:40px;
     /*height: 100%;*/
   }
   
   .Barra1, .Barra2, .Barra3 {
     z-index: 2;
     width: 100%;
-    height: 1vh;
+    height: 7px;
     border-radius: 20px;
     background-color: #333;
-    margin: 0.4vw 0;
+    margin: 4px;
     transition: 0.3s;
   }
   
@@ -132,7 +130,7 @@ header button{
 
 .menuLoginContainer{
   grid-area: login;
-  width: 20vw;
+  width: min-content;
   height: 15vh;
   margin-right: var(--carrito-margin-header);
   display: flex;
@@ -174,5 +172,6 @@ header button{
 
 .linksNav:hover {
   box-shadow: 0 0 20px var(--color-black); 
+  background-color: var(--color-darkGrey);
 
 }

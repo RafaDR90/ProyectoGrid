@@ -19,6 +19,9 @@ footer {
 .redesSociales__Container {
     text-align: left;
 }
+.alineacion__linksContainer-footer{
+    width: 80%;
+}
 
 footer h3 {
     margin-bottom: 10px;
@@ -44,4 +47,11 @@ footer a:hover{
 .icono__container img {
     width: 30px;
     height: auto;
+}
+
+@media (max-width: 768px){
+    footer{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,1fr);
+    }
 }

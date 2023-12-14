@@ -59,6 +59,7 @@
 .card-price {
     font-size: 16px;
     margin-bottom: 8px;
+    color: var(--color-NaranjaSeleccion);
 }
 
 .buy-button {
@@ -78,8 +79,8 @@
 }
 
 .buy-button:hover {
-    box-shadow: 0 0px 20px var(--color-NaranjaSeleccion);
-    background-color: var(--color-NaranjaSeleccion);
+    box-shadow: 0 0px 20px var(--color-black);
+    background-color: var(--color-darkGrey);
 }
 
 /* Responsive styles */

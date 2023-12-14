@@ -81,7 +81,7 @@
                         </div>
                         <div class="infoOfertaBot">
                             <h2 class="porcentageOferta" >¡20% de descuento!</h3>
-                            <p class="precio">{{ productos[3] ? productos[3].precio : 'N/A' }}</p>
+                            <p class="precio">{{ productos[3] ? productos[3].precio : 'N/A' }} €</p>
                             <button class="comprar-button">Comprar</button>
                         </div>
                     </div>
@@ -98,22 +98,21 @@
                     </div>
                     <div class="infoOfertaBot">
                         <h2 class="porcentageOferta" >¡30% de descuento!</h3>
-                        <p class="precio">{{ productos[5] ? productos[5].precio : 'N/A' }}</p>
+                        <p class="precio">{{ productos[5] ? productos[5].precio : 'N/A' }} €</p>
                         <button class="comprar-button">Comprar</button>
                     </div>
                 </div>
         </div>
-
-
         </section>
         <section v-if="pagina=='hombre'" id="hombre" class="itemsSection">
+            <div class="migasDePan"><button @click="changuePage('principal')">Inicio </button></div>
             <h2 class="tituloSection" >Coleccion hombre</h2>
             <div class="itemsContainer">
                 <div class="card" v-for="(item, index) in productos" :key="index">
                     <img :src="'./Img/ropa/json/'+item.img[0]" alt="Producto">
                     <div class="card-content">
                         <div class="card-title">{{item.titulo}}</div>
-                        <div class="card-price">{{item.precio}}€</div>
+                        <div class="card-price">{{item.precio}} €</div>
                         <button @click="mostrarDetalle(item.id)" class="buy-button">Ver mas</button>
                     </div>
                 </div>
@@ -142,7 +141,7 @@
                     <img src="./Img/ropa/mujer/imagen 12.png" alt="Producto">
                     <div class="card-content">
                         <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
+                        <div class="card-price">$19.99€</div>
                         <button class="buy-button">Ver mas</button>
                     </div>
                 </div>
@@ -213,16 +212,16 @@
             </div>
         </section>
         <section v-if="pagina=='detalle'" class="detalleContainer">
-            <div @click="changuePage('hombre')" class="iconoBack"><div class="iconoBack__img__container"><img src="./Img/back.png" alt="Volver"></div>Volver</div></div>
+            <div class="migasDePan"><button @click="changuePage('principal')">Inicio </button><span> > </span><button @click="changuePage('hombre')"> Hombre</button></div>
             <h2 class="tituloDetalle" v-if="detalleProducto!=null">{{detalleProducto.titulo}}</h2>
-            <p class="detalleDescripcion" v-if="detalleProducto!=null">{{detalleProducto.descripcion}}</p>
             <div class="containerImgs">
                 <div class="containerImg"><img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[0]" alt="Imagen producto"></div>
                 <div class="containerImg"><img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[1]" alt="Imagen producto"></div>
             </div>
+            <p class="detalleDescripcion" v-if="detalleProducto!=null">{{detalleProducto.descripcion}}</p>
             <p class="labelTalla">Tallas disponibles:</p>
             <p class="tallas"><span v-if="detalleProducto!=null" v-for="(item, index) in detalleProducto.talla" :key="index">{{item}}</span></p>
-            <p class="precio" v-if="detalleProducto!=null">{{detalleProducto.precio}}</p>
+            <p class="precio" v-if="detalleProducto!=null">{{detalleProducto.precio}} €</p>
             <button class="buttonAddCar">Añadir al carrito</button>
         </section>
     </main>
