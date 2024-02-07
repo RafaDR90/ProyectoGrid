@@ -1,0 +1,75 @@
+.login-register-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: var(--color-white);
+    color: black;
+    padding: 20px;
+    align-items: stretch;
+}
+
+@media (max-width: 768px) {
+    .login-register-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.login-container, .register-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.login-form, .register-form {
+    border: 1px solid var(--color-black);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input, .register-input {
+    display: block;
+    width: 95%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+}
+
+
+.login-btn, .register-btn {
+    padding: 10px;
+    background-color: black;
+    color: var(--color-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.login-btn:hover, .register-btn:hover {
+    background-color: var(--color-darkGrey);
+}
+
+input:invalid {
+    border: 2px solid var(--color-rojoOferta);
+}
+
+
+.login-container {
+    margin-right: 10px;
+}
+
+.register-container {
+    margin-left: 10px;
+}
+.invisible{
+    visibility: hidden;
+}
