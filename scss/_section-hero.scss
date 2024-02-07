@@ -1,0 +1,18 @@
+.img__container{
+    @include flex();
+    width: 100vw;
+    position: relative;
+    z-index: -1;
+    img{
+        
+        width: 100%;
+    }
+    h2{
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        font-weight: 600;
+        color:brown
+    }
+}

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GridProyect</title>
+    <title>Alquiler de casas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script type="module" src="./app.js">
         import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
@@ -17,297 +18,81 @@
           }).mount('#app');
         };
     </script>
-    <link rel="stylesheet" href="./Styles/Normalize.css">
-    <link rel="stylesheet" href="./Styles/Variables.css">
-    <link rel="stylesheet" href="./Styles/Header.css">
-    <link rel="stylesheet" href="./Styles/Carrusel.css">
-    <link rel="stylesheet" href="./Styles/ItemsContainer.css">
-    <link rel="stylesheet" href="./Styles/Main.css">
-    <link rel="stylesheet" href="./Styles/Detalle.css">
-    <link rel="stylesheet" href="./Styles/Principal.css">
-    <link rel="stylesheet" href="./Styles/Footer.css">
-    <link rel="stylesheet" href="./Styles/Login.css">
+    <link rel="stylesheet" href="./css/styles.css">
+   
     <script src="./app.js"></script>
 
 </head>
 <body id="app">
     <header>
-        <div class="menuHamburguesaContainer">
-            <div class="barras__MenuAmburguesa">
-                <div class="Barra1"></div>
-                <div class="Barra2"></div>
-                <div class="Barra3"></div>
+        
+        <nav class="navbar navbar-light bg-transparent">
+            <div class="container-fluid">
+                <!-- Agrega el logo aquí -->
+                <div class="navbar-brand">
+                    <!-- Puedes usar una etiqueta img o cualquier otro elemento que desees -->
+                    <img src="./Img/logo.png" alt="Logo" class="logo-img">
+                </div>
+                <h1>Home luxury</h1>
+                <!-- Botón del toggler -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
-            <div class="listaMenu">
-                <ul class="lista_menuHamburguesa">
-                    <li><button @click="changuePage('principal')" class="buttonInicio">Inicio</button></li>
-                    <li><button @click="changuePage('hombre')" id="buttonHombre">Hombre</button></li>
-                    <li><button @click="changuePage('mujer')" id="buttonMujer">Mujer</button></li>
-                    <li><button @click="changuePage('complementos')" id="buttonComplementos">Complementos</button></li>
-                </ul>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-transparent p-4">
+                <!-- Utiliza los botones de Bootstrap con tamaño grande (btn-lg) y efecto hover (btn-hover) -->
+                <button class="btn btn-link btn-lg btn-hover text-dark h4">Catalogo</button>
+                <button class="btn btn-link btn-lg btn-hover text-dark h4">Contacto</button>
+                <button class="btn btn-link btn-lg btn-hover text-dark h4">Acerca de</button>
             </div>
         </div>
-        <div class="logoPrincipalContainer"><button class="buttonInicio" class="enlace__LogoPrincipal" ><img @click="changuePage('principal')" src="./Img/fashionLogo.png" alt="Logo"></button></div>
-        <div class="menuLoginContainer">
-            <button @click="changuePage('login')" class="linksNav" href="">Login</button>
-            <a class="linkCarrito" href=""><img src="./Img/carrito.png" alt=""></a>
+        <div class="container nav2">
+            <div class="row align-items-center">
+                <div class="col-md-1">
+                    <div claSs="d-flex align-items-center">
+                        <img src="./Img/sol.png" alt="Sol" class="iconoSol img-thumbnail" style="width: 50px; height: 50px;">
+                        <p class="m-0 ms-2">25°</p>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <img src="./Img/calendario.png" alt="Calendario" class="img-thumbnail" style="width: 50px; height: 50px;">
+                </div>
+                <div class="col-md-2">
+                    <img src="./Img/relo.png" alt="Reloj" class="img-thumbnail" style="width: 50px; height: 50px;">
+                </div>
+                <div class="col-md-2">
+                    <p>Llegada</p>
+                    <input type="date" class="form-control mb-3">
+                </div>
+                <div class="col-md-2">
+                    <p>Salida</p>
+                    <input type="date" class="form-control mb-3">
+                </div>
+                <div class="col-md-2">
+                    <p>Habitaciones</p>
+                    <select name="habitaciones" id="habitaciones" class="form-select mb-3">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-dark mt-4">Buscar</button>
+                </div>
+            </div>
         </div>
     </header>
     <main>
-        <section v-if="pagina=='principal'" id="principal">
-            <div class="bannerOfertaNavidad"><button>Ver ofertas</button></div>
-            <section class="carrusel">
-                <div class="carrusel-wrapper">
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion otoño 2023</p><img src="./Img/ropa/mujer/imagen 1.jpg" alt="Imagen 1"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/hombre/imagen 2.png" alt="Imagen 2"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/mujer/imagen 11.png" alt="Imagen 3"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion otoño 2023</p><img src="./Img/ropa/hombre/imagen 4.png" alt="Imagen 4"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/mujer/imagen 12.png" alt="Imagen 5"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/hombre/imagen 6.png" alt="Imagen 6"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/mujer/imagen 3.png" alt="Imagen 7"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion primavera-verano 2023</p><img src="./Img/ropa/hombre/imagen 8.png" alt="Imagen 8"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion primavera-verano 2023</p><img src="./Img/ropa/mujer/imagen 5.png" alt="Imagen 9"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/mujer/imagen 7.png" alt="Imagen 10"></div>
-                    <div class="carrusel-item"><p class="textoImagen">Coleccion verano 2023</p><img src="./Img/ropa/mujer/imagen 9.png" alt="Imagen 11"></div>
-                </div>
-            </section>
-            <div v-if="productos" class="ofertaPrenda">
-                    <div class="imgOfertaIz">
-                        <img src="Img/ropa/json/h4.jpg" alt="Imagen de prenda en oferta">
-                    </div>
-                    <div class="infoOfertaIz" >
-                        <div class="infoOfertaTop">
-                            <h2>{{ productos[3] ? productos[3].titulo : 'N/A' }}</h2>
-                            <h4>{{ productos[3] ? productos[3].descripcion : 'N/A' }}</h4>
-                        </div>
-                        <div class="infoOfertaBot">
-                            <h2 class="porcentageOferta" >¡20% de descuento!</h3>
-                            <p class="precio">{{ productos[3] ? productos[3].precio : 'N/A' }} €</p>
-                            <button class="comprar-button">Comprar</button>
-                        </div>
-                    </div>
-            </div>
-
-            <div v-if="productos" class="ofertaPrenda">
-                <div class="imgOfertaDer">
-                    <img src="Img/ropa/json/h6.jpg" alt="Imagen de prenda en oferta">
-                </div>
-                <div class="infoOfertaDer" >
-                    <div class="infoOfertaTop">
-                        <h2>{{ productos[5] ? productos[5].titulo : 'N/A' }}</h2>
-                        <h4>{{ productos[5] ? productos[5].descripcion : 'N/A' }}</h4>
-                    </div>
-                    <div class="infoOfertaBot">
-                        <h2 class="porcentageOferta" >¡30% de descuento!</h3>
-                        <p class="precio">{{ productos[5] ? productos[5].precio : 'N/A' }} €</p>
-                        <button class="comprar-button">Comprar</button>
-                    </div>
-                </div>
-        </div>
-        </section>
-        <section v-if="pagina=='login'" id="login-section">
-            <div class="login-container">
-                <div class="login-form">
-                    <h2>¿Tienes una cuenta?</h2>
-                    <form id="formLogin">
-                        <input type="email" class="login-input" placeholder="Email" required>
-                        <input type="password" class="login-input" placeholder="Contraseña" required>
-                        <button type="submit" class="login-btn">Iniciar Sesión</button>
-                    </form>
-                </div>
-                <div class="register-form">
-                    <h2>¿Aún no tienes una cuenta?</h2>
-                    <form id="formRegister">
-                        <input type="text" class="register-input" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" placeholder="Nombre" required>
-                        <input type="text" class="register-input" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" placeholder="Apellidos" required>
-                        <input type="email" class="register-input" placeholder="Email" required>
-                        <input type="password" class="register-input" placeholder="Contraseña" required>
-                        <input type="password" class="register-input" placeholder="Verificar Contraseña" required>
-                        <button type="submit" class="register-btn">Registrar</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        <section v-if="pagina=='hombre'" id="hombre" class="itemsSection">
-            <div class="migasDePan"><button @click="changuePage('principal')">Inicio </button></div>
-            <h2 class="tituloSection" >Coleccion hombre</h2>
-            <div class="itemsContainer">
-                <div class="card" v-for="(item, index) in productos" :key="index">
-                    <img :src="'./Img/ropa/json/'+item.img[0]" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">{{item.titulo}}</div>
-                        <div class="card-price">{{item.precio}} €</div>
-                        <button @click="mostrarDetalle(item.id)" class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section v-if="pagina=='mujer'" id="mujer" class="itemsSection">
-            <h2 class="tituloSection" >Coleccion mujer</h2>
-            <div class="itemsContainer">
-                <div class="card">
-                    <img src="./Img/ropa/mujer/imagen 1.jpg" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/imagen 11.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/imagen 12.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99€</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/imagen 3.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/imagen 5.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/imagen 7.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/imagen 9.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/m1.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/m2.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/m3.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mas</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Img/ropa/mujer/m4.png" alt="Producto">
-                    <div class="card-content">
-                        <div class="card-title">Nombre del Producto</div>
-                        <div class="card-price">$19.99</div>
-                        <button class="buy-button">Ver mass</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section v-if="pagina=='detalle'" class="detalleContainer">
-            <div class="migasDePan"><button @click="changuePage('principal')">Inicio </button><span> > </span><button @click="changuePage('hombre')"> Hombre</button></div>
-            <h2 class="tituloDetalle" v-if="detalleProducto!=null">{{detalleProducto.titulo}}</h2>
-            <div class="containerImgs">
-                <div class="containerImg"><img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[0]" alt="Imagen producto"></div>
-                <div class="containerImg"><img v-if="detalleProducto!=null" :src="'./Img/ropa/json/'+detalleProducto.img[1]" alt="Imagen producto"></div>
-            </div>
-            <p class="detalleDescripcion" v-if="detalleProducto!=null">{{detalleProducto.descripcion}}</p>
-            <p class="labelTalla">Tallas disponibles:</p>
-            <p class="tallas"><span v-if="detalleProducto!=null" v-for="(item, index) in detalleProducto.talla" :key="index">{{item}}</span></p>
-            <p class="precio" v-if="detalleProducto!=null">{{detalleProducto.precio}} €</p>
-            <button class="buttonAddCar">Añadir al carrito</button>
+        <section class="img__container">
+            <img src="./Img/fondo1.jpg" alt="Fondo de una casa">
+            <h2 class="display-1">Home luxury</h2>
         </section>
     </main>
-    <footer>
-        <div class="linksContainer-footer">
-            <div class="alineacion__linksContainer-footer">
-                <h3>Ayuda</h3>
-                <a href="">Comprar Online</a>
-                <a href="">Pago</a>
-                <a href="">Envio</a>
-                <a href="">Devoluciones</a>
-                <a href="">Tarjeta Regalo</a>
-                <a href="">Ticket regalo</a>
-                <a href="">Solicita factura</a>
-            </div>
-        </div>
-        <div class="linksContainer-footer">
-            <div class="alineacion__linksContainer-footer">
-                <h3>Nosotros</h3>
-                <a href="">Sobre nosotros</a>
-                <a href="">Sostenibilidad</a>
-                <a href="">Trabaja con nosotros</a>
-                <a href="">Nuestras tiendas</a>
-            </div>
-        </div>
-        <div class="linksContainer-footer">
-            <div class="alineacion__linksContainer-footer">
-                <h3>Legal</h3>
-                <a href="">Politica de cookies</a>
-                <a href="">Franquicias falsas</a>
-                <a href="">Condiciones de uso</a>
-                <a href="">Aviso de privacidad</a>
-                <a href="">Estado de informacion no Financiera</a>
-            </div>
-        </div>
-        <div class="linksContainer-footer">
-            <div class="metodosPago__Container">
-                <div>
-                    <h3>Metodos de pago</h3>
-                    <div class="iconosContainer">
-                        <div class="icono__container"><img src="./Img/metodosDePago/mastercard.png" alt="MasterCard"></div>
-                        <div class="icono__container"><img src="./Img/metodosDePago/visa.png" alt="Visa"></div>
-                        <div class="icono__container"><img src="./Img/metodosDePago/paypal.png" alt="Paypal"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="redesSociales__Container">
-                <h3>Redes sociales</h3>
-                <div class="iconosContainer">
-                    <div class="icono__container"><img src="./Img/redes/facebook.png" alt="Facebook"></div>
-                    <div class="icono__container"><img src="./Img/redes/instagram.png" alt="Instagram"></div>
-                </div>
-            </div>
-        </div>
-        
-        
-        
-        
-    </footer>
     
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

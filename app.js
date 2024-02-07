@@ -1,6 +1,6 @@
 window.onload = () => {
-    const productosJSON = {
-        "productos": [
+    const casasJSON = {
+        "casas": [
           {
             "id": 1,
             "titulo": "Chaqueta Acolchada con Capucha",
@@ -90,7 +90,7 @@ window.onload = () => {
         createApp({
           data() {
             return{
-                productos:[],
+                casas:[],
                 pagina:'principal',
                 detalleProducto:null,
             }
@@ -100,15 +100,15 @@ window.onload = () => {
               this.pagina=pagina
             },
             mostrarDetalle(id){
-              const producto=this.productos.find((producto) => producto.id === id)
-              console.log(producto)
-              this.detalleProducto=producto;
+              const casas=this.casas.find((producto) => producto.id === id)
+              console.log(casas)
+              this.detalleProducto=casas;
               this.pagina="detalle";
             }
           },
           mounted() {
-            this.productos=productosJSON.productos;
-            console.log(this.productos)
+            this.casas=casasJSON.casas;
+            console.log(this.casas)
 
           },
         }).mount('#app');
@@ -116,21 +116,6 @@ window.onload = () => {
 
       
 
-    const carrusel = document.querySelector('.carrusel-wrapper');
-    let currentIndex = 0;
-    let intervalId;
-    const startInterval = () => {
-        intervalId = setInterval(() => {
-            currentIndex = (currentIndex + 1) % carrusel.children.length;
-            carrusel.style.transform = `translateX(${-currentIndex * 100}%)`;
-        }, 6000);
-    };
-    carrusel.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % carrusel.children.length;
-        carrusel.style.transform = `translateX(${-currentIndex * 100}%)`;
-        clearInterval(intervalId);
-        startInterval();
-    });
-    startInterval();
+  
     
 }
