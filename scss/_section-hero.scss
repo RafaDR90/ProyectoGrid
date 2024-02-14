@@ -1,6 +1,6 @@
-.img__container{
+.img__container--hero{
     @include flex();
-    width: 100vw;
+    width: 100%;
     position: relative;
     z-index: -1;
     img{
@@ -10,8 +10,8 @@
     h2{
         position: absolute;
         z-index: 2;
-        top: 50%;
-        left: 50%;
+        top: 20%;
+        left: 55%;
         font-weight: 600;
         color:brown
     }
