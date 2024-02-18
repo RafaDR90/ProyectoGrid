@@ -3,3 +3,12 @@
 @import './nav';
 @import './section-hero';
 @import './categorias-section';
+@import './info__principal';
+@import './rating__section';
+@import './flip_cards__section';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

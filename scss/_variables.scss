@@ -8,3 +8,14 @@ $colors:(
 @function color($color-name) {
     @return map-get($colors, $color-name);
 }
+
+$text-size:(
+    texto: calc(0.5rem + 0.5vw),
+    subtitulo: calc(1rem + 1vw),
+    titulo: 2.5rem,
+    titulo-grande: calc(2.5rem + 2vw)
+);
+
+@function text-size($text-size-name) {
+    @return map-get($text-size, $text-size-name);
+}

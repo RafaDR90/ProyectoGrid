@@ -1,6 +1,10 @@
 .categorias__section{
     div{
         @include flex(row);
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        justify-content: space-around;
         button{
             @include flex(column);
             gap: 10px;
@@ -14,22 +18,52 @@
                 top: 0;
                 position: absolute;
             }
-            width: 25vw;
-            height: 25vw;
-            .icon__container{
-                position: relative;
-                width: 3vw;
-                height: 3vw;
-                background-color: rgba(255, 255, 255, 0);
-                img{
+            width: 24.54vw;
+            height: 24.54vw;
+            @media screen and (max-width: 767px) {
+                width: 48.79vw;
+                height: 48.79vw;
+            }
+            .container_logoYTitulo{
+                @include flex(row);
+                align-items: end;
+                justify-content: center;
+                width: 100%;
+                height: 60%;
+                .icon__container{
                     position: relative;
-                    width: 100%;
-                    height: 100%;
+                    width: 3vw;
+                    height: 3vw;
+                    background-color: rgba(255, 255, 255, 0);
+                    img{
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
+                h3{
+                    position: relative;
+                }
+            
             }
-            h3{
-                position: relative;
+            .hover-content { 
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0; 
+                transition: opacity 0.3s ease; 
             }
+            &:hover .hover-content {
+                opacity: 1; 
+            }
+            
         }
     }
 }

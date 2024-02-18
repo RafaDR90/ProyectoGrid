@@ -20,7 +20,7 @@
     </script>
     <link rel="stylesheet" href="./css/styles.css">
    
-    <script src="./app.js"></script>
+    
 
 </head>
 <body id="app">
@@ -44,42 +44,50 @@
                 <button class="btn btn-link btn-lg btn-hover text-dark h4">Acerca de</button>
             </div>
         </div>
-        <div class="container nav2">
+        <div class="container-fluid nav2">
             <div class="row align-items-center">
-                <div class="col-md-1">
-                    <div claSs="d-flex align-items-center">
-                        <img src="./Img/sol.png" alt="Sol" class="iconoSol img-thumbnail" style="width: 50px; height: 50px;">
+                <div class="col-md-1 col-4">
+                    <div class="d-flex align-items-center">
+                        <img src="./Img/sol.png" alt="Sol" class="iconoSol img-thumbnail">
                         <p class="m-0 ms-2">25°</p>
                     </div>
                 </div>
-                <div class="col-md-1">
-                    <img src="./Img/calendario.png" alt="Calendario" class="img-thumbnail" style="width: 50px; height: 50px;">
+                <div class="col-md-1 col-4">
+                    <div class="d-flex align-items-center">
+                        <img src="./Img/calendario.png" alt="Calendario" class="img-thumbnail">
+                        <p class="m-0 ms-2">11/02</p>
+                    </div>
                 </div>
-                <div class="col-md-2">
-                    <img src="./Img/relo.png" alt="Reloj" class="img-thumbnail" style="width: 50px; height: 50px;">
+                <div class="col-md-2 col-4">
+                    <div class="d-flex align-items-center">
+                        <img src="./Img/relo.png" alt="Reloj" class="img-thumbnail">
+                        <p class="m-0 ms-2">11:00</p>
+                    </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-12 mb-3 mb-md-0">
                     <p>Llegada</p>
-                    <input type="date" class="form-control mb-3">
+                    <input type="date" class="form-control">
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-12 mb-3 mb-md-0">
                     <p>Salida</p>
-                    <input type="date" class="form-control mb-3">
+                    <input type="date" class="form-control">
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-12 mb-3 mb-md-0">
                     <p>Habitaciones</p>
-                    <select name="habitaciones" id="habitaciones" class="form-select mb-3">
+                    <select name="habitaciones" id="habitaciones" class="form-select">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                     </select>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 col-12">
                     <button class="btn btn-dark mt-4">Buscar</button>
                 </div>
             </div>
         </div>
+        
+        
     </header>
     <main>
 
@@ -88,40 +96,253 @@
             <h2 class="display-1">Home luxury</h2>
         </section>
 
+
+        <section class="Info__principal__section">
+            <div class="container">
+                <h2 class="titulo">HOME LUXURY</h2>
+                <div>
+                    <h2>¿Por qué elegirnos?</h2>
+                    <p>En Home Luxury nos esforzamos por brindarte la mejor experiencia durante tu estancia. Nuestro compromiso es proporcionarte no solo un lugar donde alojarte, sino un verdadero hogar lejos de casa. Nos destacamos por ofrecer las mejores casas y residencias de lujo, cuidadosamente seleccionadas para asegurarnos de que cada detalle cumpla con los más altos estándares de calidad y confort.</p>
+                    <p>Entendemos que tus vacaciones son un momento especial, un tiempo para relajarte y disfrutar de momentos inolvidables. Es por eso que nos dedicamos a ofrecerte propiedades exclusivas que te permitan hacer precisamente eso: disfrutar al máximo. Ya sea que estés buscando una escapada tranquila junto al mar, un retiro en la montaña o un oasis urbano, tenemos la casa perfecta para ti.</p>    
+                </div>
+            </div>
+        </section>
+
         
         <section class="categorias__section">
             <div>
                 <button>
-                    <img src="./Img/fondo1.jpg" alt="">
-                    
+                    <img src="./Img/seccionFamilia.jpg" alt="">
+                    <div class="container_logoYTitulo">
                         <div class="icon__container">
                             <img src="./Img/casa_icon.png" alt="Casa 1" class="logo-img">
                         </div>
                         <h3>Familia</h3>
-                    
-                </button>
-                <button>
-                    <div class="icon__container">
-                        <img src="./Img/casa_icon.png" alt="Logo" class="logo-img">
                     </div>
-                    <h3>Lujo</h3>
-                </button>
-                <button>
-                    <div class="icon__container">
-                        <img src="./Img/casa_icon.png" alt="Logo" class="logo-img">
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra seccion de casas familiares para poder disfrutar con los tuyos</p>
                     </div>
-                    <h3>Aventuras</h3>
                 </button>
+
                 <button>
-                    <div class="icon__container">
-                        <img src="./Img/casa_icon.png" alt="Logo" class="logo-img">
+                    <img src="./Img/seccionLujo.jpg" alt="">
+                    <div class="container_logoYTitulo">
+                        <div class="icon__container">
+                            <img src="./Img/diamante.png" alt="Casa 1" class="logo-img">
+                        </div>
+                        <h3>Lujo</h3>
                     </div>
-                    <h3>Montaña</h3>
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra seccion de casas equipadas con el maximo de lujo para poder disfrutar con los tuyos</p>
+                    </div>
+                </button>
+
+                <button>
+                    <img src="./Img/seccionAventura.jpg" alt="">
+                    <div class="container_logoYTitulo">
+                        <div class="icon__container">
+                            <img src="./Img/castillo.png" alt="Casa 1" class="logo-img">
+                        </div>
+                        <h3>Aventuras</h3>
+                    </div>
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra seccion de casas destinadas a la aventura donde podras disfrutar de momentos inolvidables</p>
+                    </div>
+                </button>
+
+                <button>
+                    <img src="./Img/seccionMontana.jpg" alt="">
+                    <div class="container_logoYTitulo">
+                        <div class="icon__container">
+                            <img src="./Img/pino.png" alt="Casa 1" class="logo-img">
+                        </div>
+                        <h3>Montaña</h3>
+                    </div>
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra sección de casas de montaña donde podrás disfrutar de la naturaleza en su máximo esplendor</p>
+                    </div>
                 </button>
             </div>
         </section>
+        <section class="rating__section">
+            <h2>Opiniones</h2>
+            <div class="clasificacion">
+                <p>★</p>
+                <p>★</p>
+                <p>★</p>
+                <p>★</p>
+                <p>★</p>
+            </div>
+            <div class="carousel__container">
+                <input type="radio" name="position" checked />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <div id="carousel">
+                    <div class="item">
+                        <p class="nombreUsuario">Rafael Delgado</p>
+                        <p>Excelente servicio, la casa estaba en perfectas condiciones y la atención fue inmejorable. Sin duda volveré a reservar con ellos.</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">María Fernández</p>
+                        <p>Una experiencia maravillosa. La casa era espectacular y el personal muy amable. Definitivamente, ¡recomendado!</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">Alejandro Gutiérrez</p>
+                        <p>Increíble lugar. Nos encantó cada detalle de la casa y el entorno. Sin duda, volveremos en nuestro próximo viaje.</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">Laura Martínez</p>
+                        <p>¡Qué estancia tan agradable! Todo estaba limpio y bien organizado. El equipo de atención al cliente fue excelente.</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">Javier López</p>
+                        <p>Una casa impresionante y un servicio impecable. Disfrutamos cada momento de nuestra estancia. ¡Altamente recomendado!</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <hr>
         
         
+        <section class="section-plans" id="flip_cards__section">
+            <div class="u-center-text u-margin-bottom-big">
+              <h2 class="heading-secondary">
+                Somos profesionales
+              </h2>
+            </div>
+      
+            <div class="row">
+              <div class="col-1-of-3">
+                <div class="card">
+                  <div class="card__side card__side--front-1">
+                    <div class="card__title card__title--1">
+                      <i class="fas fa-paper-plane"></i>
+                      <h4 class="card__heading">Basic</h4>
+                    </div>
+      
+                    <div class="card__details">
+                      <ul>
+                        <li>1 Website</li>
+                        <li>50 GB SSD Storage</li>
+                        <li>Unmetered Bandwidth</li>
+                        <li>Free SSL Certificate</li>
+                        <li>1 Included Domain</li>
+                        <li>1 Included Domain</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card__side card__side--back card__side--back-1">
+                    <div class="card__cta">
+                      <div class="card__price-box">
+                        <p class="card__price-only">Only</p>
+                        <p class="card__price-value">$2.95/mo*</p>
+                      </div>
+                      <a href="#popup" class="btn btn--white">Select</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-1-of-3">
+                <div class="card">
+                  <div class="card__side card__side--front-2">
+                    <div class="card__title card__title--2">
+                      <i class="fas fa-plane"></i>
+                      <h4 class="card__heading">Plus</h4>
+                    </div>
+      
+                    <div class="card__details">
+                      <ul>
+                        <li>Includes Basic Package Features</li>
+                        <li>Unlimited Websites</li>
+                        <li>Unlimited SSD Storage</li>
+                        <li>Unlimited Domains</li>
+                        <li>Unlimited Parked Domains</li>
+                        <li>Unlimited Sub Domains</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card__side card__side--back card__side--back-2">
+                    <div class="card__cta">
+                      <div class="card__price-box">
+                        <p class="card__price-only">Only</p>
+                        <p class="card__price-value">$5.45/mo*</p>
+                      </div>
+                      <a href="#popup" class="btn btn--white">Select</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-1-of-3">
+                <div class="card">
+                  <div class="card__side card__side--front-3">
+                    <div class="card__title card__title--3">
+                      <i class="fas fa-rocket"></i>
+                      <h4 class="card__heading">Pro</h4>
+                    </div>
+      
+                    <div class="card__details">
+                      <ul>
+                        <li>Includes Plus Plan Features</li>
+                        <li>High Performance</li>
+                        <li>2 Spam Experts</li>
+                        <li>Free SSL Certificate</li>
+                        <li>Domain Privacy</li>
+                        <li>Site Backup - CodeGuard Basic</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card__side card__side--back card__side--back-3">
+                    <div class="card__cta">
+                      <div class="card__price-box">
+                        <p class="card__price-only">Only</p>
+                        <p class="card__price-value">$13.95/mo</p>
+                      </div>
+                      <a href="#popup" class="btn btn--white">Select</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </section>
         
         
         
@@ -129,5 +350,28 @@
     
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module">
+        const carouselItems = document.querySelectorAll('.carousel__item');
+        let currentIndex = 0;
+
+        document.querySelector('.carousel__prev').addEventListener('click', () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        });
+
+        document.querySelector('.carousel__next').addEventListener('click', () => {
+          if (currentIndex < carouselItems.length - 1) {
+            currentIndex++;
+            updateCarousel();
+          }
+        });
+
+        function updateCarousel() {
+          const offset = -currentIndex * 100;
+          document.querySelector('.carousel__container').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
 </body>
 </html>
