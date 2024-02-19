@@ -299,32 +299,33 @@
     font-weight: 100;
   }
   
-  .row {
+  .row__container {
+  
     display: flex;
     justify-content: center;
-    gap: calc(3rem + 3vw);
+    gap: calc(3rem + 1vw);
     max-width: 114rem;
     margin: 0 auto;
   }
   
-  .row:not(:last-child) {
+  .row__container:not(:last-child) {
     margin-bottom: 5rem;
     margin-top: 5rem;
   }
   
-  .row::after {
+  .row__container::after {
     content: "";
     display: table;
     clear: both;
   }
   
-  .row [class^="col-"] {
+  .row__container [class^="col-"] {
     float: left;
   }
   
   
   
-  .row .col-1-of-3 {
+  .row__container .col-1-of-3 {
     width: 330px;
   }
 
