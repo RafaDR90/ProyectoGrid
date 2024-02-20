@@ -1,8 +1,10 @@
+///Aplica un estilo de borde redondeado
 %border_radius {
     border: 0.1rem solid color(primary);
     border-radius: 0.5rem;
 }
 
+///quita estilo de las listas
 %reset_list {
     list-style: none;
     padding: 0;
@@ -13,7 +15,7 @@
     }
 }
 
-
+///Crea un grid responsivo con parametros por defecto
 @mixin responsive_grid(){
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(301px, 1fr));
@@ -21,7 +23,18 @@
     padding: 0 2rem;
 }
 
+///Establece un display flex con la dirección especificada, si no se especifica, se establece por defecto en fila.
 @mixin flex($direction: row) {
     display: flex;
     flex-direction: $direction;
 }
+
+
+/// Este mixin establece un diseño de cuadrícula con un número dado de columnas y filas, 
+/// junto con un espacio entre celdas especificado.
+@mixin fr-grid($columns, $rows, $gap) {
+    display: grid;
+    gap: $gap;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, 1fr);
+  }

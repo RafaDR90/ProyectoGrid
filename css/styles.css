@@ -525,16 +525,33 @@ body {
   margin-bottom: 5rem;
   margin-top: 5rem; }
 
-.row__container::after {
-  content: "";
-  display: table;
-  clear: both; }
-
 .row__container [class^="col-"] {
   float: left; }
 
 .row__container .col-1-of-3 {
   width: 330px; }
+
+.gridImg__section {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr); }
+  .gridImg__section .hijo1x1 {
+    grid-column: span 1;
+    grid-row: span 1; }
+  .gridImg__section .hijo2x1 {
+    grid-column: span 2;
+    grid-row: span 1; }
+  .gridImg__section .hijo1x2 {
+    grid-column: span 1;
+    grid-row: span 2; }
+  .gridImg__section .hijo2x2 {
+    grid-column: span 2;
+    grid-row: span 2; }
+  .gridImg__section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
 
 * {
   margin: 0;

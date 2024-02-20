@@ -313,12 +313,6 @@
     margin-top: 5rem;
   }
   
-  .row__container::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
   .row__container [class^="col-"] {
     float: left;
   }
