@@ -1,3 +1,49 @@
-.cards__section{
-    
+.cards__section {
+    margin-top: 2vw;
+    @include flex(column);
+    align-items: center;
+    width: 100%;
+    h2{
+        margin-bottom: 3rem; 
+    }
+    .cards__container {
+        @include flex(row);
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5%;
+        width: 100%;
+        .miCard {
+            background-color: gainsboro;
+            box-shadow: 0 2px 4px gainsboro;
+            @include flex(column);
+            align-items: center;
+            width: 35rem;
+            height: 50rem;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+            .card__img{
+                height: 45%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-top-left-radius: 30px; /* Aplica radio de borde solo en la esquina superior izquierda */
+                    border-top-right-radius: 30px;                }
+            }
+            h3{
+                margin: 2rem;
+            } 
+            p{
+               width: 80%; 
+            }
+            a{
+                ///le doy mt auto y bot 1 rem para que este a una distancia de 1 rem de la parte de abajo
+                margin-top: auto; 
+                margin-bottom: 2rem;
+                align-self: flex-start;
+                margin-left: 3rem;
+                @extend %reset_link;
+            }
+        }
+    }
 }

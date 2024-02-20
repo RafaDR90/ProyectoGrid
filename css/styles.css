@@ -1,3 +1,7 @@
+.cards__section .cards__container .miCard a {
+  text-decoration: none;
+  color: brown; }
+
 .nav2 {
   position: absolute;
   width: 100%;
@@ -531,27 +535,117 @@ body {
 .row__container .col-1-of-3 {
   width: 330px; }
 
-.gridImg__section {
+.grid__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .grid__section .gridImg__section {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr); }
+    .grid__section .gridImg__section .hijo1x1 {
+      grid-column: span 1;
+      grid-row: span 1; }
+    .grid__section .gridImg__section .hijo2x1 {
+      grid-column: span 2;
+      grid-row: span 1; }
+    .grid__section .gridImg__section .hijo1x2 {
+      grid-column: span 1;
+      grid-row: span 2; }
+    .grid__section .gridImg__section .hijo2x2 {
+      grid-column: span 2;
+      grid-row: span 2; }
+    .grid__section .gridImg__section img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+
+.cards__section {
+  margin-top: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; }
+  .cards__section h2 {
+    margin-bottom: 3rem; }
+  .cards__section .cards__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 100%; }
+    .cards__section .cards__container .miCard {
+      background-color: gainsboro;
+      box-shadow: 0 2px 4px gainsboro;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 35rem;
+      height: 50rem;
+      border-radius: 30px;
+      margin-bottom: 2rem; }
+      .cards__section .cards__container .miCard .card__img {
+        height: 45%; }
+        .cards__section .cards__container .miCard .card__img img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-top-left-radius: 30px;
+          /* Aplica radio de borde solo en la esquina superior izquierda */
+          border-top-right-radius: 30px; }
+      .cards__section .cards__container .miCard h3 {
+        margin: 2rem; }
+      .cards__section .cards__container .miCard p {
+        width: 80%; }
+      .cards__section .cards__container .miCard a {
+        margin-top: auto;
+        margin-bottom: 2rem;
+        align-self: flex-start;
+        margin-left: 3rem; }
+
+footer {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  background-color: black;
+  color: white;
+  height: 20rem;
+  justify-content: center;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr); }
-  .gridImg__section .hijo1x1 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr); }
+  footer .izq {
+    margin-left: 2rem;
     grid-column: span 1;
     grid-row: span 1; }
-  .gridImg__section .hijo2x1 {
-    grid-column: span 2;
-    grid-row: span 1; }
-  .gridImg__section .hijo1x2 {
+  footer .med {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column: span 1;
-    grid-row: span 2; }
-  .gridImg__section .hijo2x2 {
-    grid-column: span 2;
-    grid-row: span 2; }
-  .gridImg__section img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; }
+    grid-row: span 1; }
+    footer .med .imgs__container {
+      display: flex;
+      flex-direction: row; }
+      footer .med .imgs__container img {
+        width: 5rem;
+        height: 5rem;
+        margin: 2rem; }
+  footer .der {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 1;
+    grid-row: span 1; }
+    footer .der .imgs__container {
+      display: flex;
+      flex-direction: row; }
+      footer .der .imgs__container img {
+        width: 5rem;
+        height: 5rem;
+        margin: 2rem; }
 
 * {
   margin: 0;

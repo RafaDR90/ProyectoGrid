@@ -15,6 +15,12 @@
     }
 }
 
+///quita decoracion de enlaces
+%reset_link {
+    text-decoration: none;
+    color: color(secondary);
+}
+
 ///Crea un grid responsivo con parametros por defecto
 @mixin responsive_grid(){
     display: grid;

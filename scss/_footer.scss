@@ -1,0 +1,42 @@
+footer{
+    padding-top: 2rem;
+    margin-top: 2rem;
+    background-color: black;
+    color: white;
+    height: 20rem;
+    justify-content: center;
+    @include fr-grid(3, 1, 1rem);
+    .izq{
+        margin-left: 2rem;
+        grid-column: span 1; 
+        grid-row: span 1; 
+    }
+    .med{
+        @include flex(column);
+        align-items: center;
+        grid-column: span 1; 
+        grid-row: span 1;
+        .imgs__container{
+            @include flex;
+            img{
+                width: 5rem;
+                height: 5rem;
+                margin: 2rem;
+            }
+        }
+    }
+    .der{
+        @include flex(column);
+        align-items: center;
+        grid-column: span 1; 
+        grid-row: span 1;
+        .imgs__container{
+            @include flex;
+            img{
+                width: 5rem;
+                height: 5rem;
+                margin: 2rem;
+            }
+        }
+    }
+}
