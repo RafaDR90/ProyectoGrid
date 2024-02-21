@@ -1,3 +1,8 @@
+header{
+    h1{
+        font-size: text-size(titulo-grande);
+    }
+}
 .nav2 {
     position: absolute;
     width: 100%;
@@ -20,4 +25,8 @@
 .form-select, input {
     margin-bottom: 10px;
     
+}
+.logo-img{
+    width: 100px;
+    height: 100px;
 }

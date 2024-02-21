@@ -10,12 +10,27 @@ $colors:(
 }
 
 $text-size:(
-    texto: calc(0.5rem + 0.5vw),
+    texto: calc(1.2rem + 0.2vw),
     subtitulo: calc(1rem + 1vw),
     titulo: 2.5rem,
-    titulo-grande: calc(2.5rem + 2vw)
+    titulo-grande: calc(1.5rem + 1.5vw)
 );
 
 @function text-size($text-size-name) {
     @return map-get($text-size, $text-size-name);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p.a{
+    font-size: text-size(texto);
+}
+
+h2{
+    font-size: text-size(subtitulo);
+    font-weight: bold;
 }
