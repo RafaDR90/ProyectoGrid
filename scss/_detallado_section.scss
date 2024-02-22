@@ -1,0 +1,25 @@
+.detallado__section{
+    display: none;
+    width: 100%;
+    justify-content: center;
+    &>div{
+        width: 80vw;
+        height: 30vw;
+        border: solid 1px blue;
+        .intermediario{
+            width: 100%;
+            height: 100%;
+            .img__container--detallado{
+                width: 100%;
+                height: 100%;
+                border: solid 1px red;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+        
+    }
+}

@@ -516,6 +516,63 @@ footer {
         height: 2rem;
         margin: 1rem; }
 
+.vistaDetalle {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem; }
+  .vistaDetalle .card__detalle {
+    border: solid 1px #c4c4c4;
+    border-radius: 4px;
+    width: 80%;
+    display: flex;
+    flex-direction: row; }
+    @media screen and (max-width: 992px) {
+      .vistaDetalle .card__detalle {
+        flex-direction: column;
+        width: min-content; } }
+    @media screen and (max-width: 992px) {
+      .vistaDetalle .card__detalle .contenedor__imagenes {
+        width: 100% !important; } }
+    .vistaDetalle .card__detalle .datos__item h3 {
+      margin: 1rem; }
+    .vistaDetalle .card__detalle .datos__item p {
+      margin: 1rem; }
+    .vistaDetalle .card__detalle .datos__item div {
+      display: flex;
+      flex-direction: row; }
+  .vistaDetalle h2 {
+    align-self: self-start;
+    margin: 2rem; }
+  .vistaDetalle .altura {
+    height: 14rem;
+    width: 20rem; }
+    @media screen and (max-width: 992px) {
+      .vistaDetalle .altura {
+        border: solid black 1px; } }
+
+.detallado__section {
+  display: none;
+  width: 100%;
+  justify-content: center; }
+  .detallado__section > div {
+    width: 80vw;
+    height: 30vw;
+    border: solid 1px blue; }
+    .detallado__section > div .intermediario {
+      width: 100%;
+      height: 100%; }
+      .detallado__section > div .intermediario .img__container--detallado {
+        width: 100%;
+        height: 100%;
+        border: solid 1px red; }
+        .detallado__section > div .intermediario .img__container--detallado img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+
 * {
   margin: 0;
   padding: 0;
