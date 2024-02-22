@@ -16,6 +16,9 @@ footer{
         margin-left: 2rem;
         grid-column: span 1; 
         grid-row: span 1; 
+        a{
+            display: block;
+        }
     }
     .med{
         @include flex(column);

@@ -2,7 +2,8 @@ $colors:(
     primary:#333,
     secondary: brown,
     tertiary: #f2f0f1,
-    quaternary: #e75480
+    quaternary: #e75480,
+    calificacion:rgb(255, 208, 0)
 );
 
 @function color($color-name) {
@@ -20,18 +21,3 @@ $text-size:(
     @return map-get($text-size, $text-size-name);
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
-
-p.a{
-    font-size: text-size(texto);
-}
-
-h2{
-    font-size: text-size(subtitulo);
-    font-weight: bold;
-}

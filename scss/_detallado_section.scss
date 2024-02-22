@@ -1,18 +1,19 @@
 .detallado__section{
     display: none;
     width: 100%;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     &>div{
         width: 80vw;
         height: 30vw;
-        border: solid 1px blue;
+        
         .intermediario{
             width: 100%;
             height: 100%;
             .img__container--detallado{
                 width: 100%;
                 height: 100%;
-                border: solid 1px red;
+                
                 img{
                     width: 100%;
                     height: 100%;
@@ -21,5 +22,66 @@
             }
         }
         
+    }
+    .info__detallado--container{
+        width: 80vw;
+        height: min-content;
+        border: solid 3px rgb(202, 202, 202);
+        @include flex();
+        @media screen and (max-width: 992px){
+            flex-direction: column !important;
+        }
+        .izquierda__detallado{
+            margin: 3rem;
+            width: 70%;
+            h2{
+                font-size: text-size(titulo);
+            }
+            .clasificacion__detallado{
+                @include flex();
+                font-size: text-size(titulo-grande);
+                p:nth-child(-n+4){
+                    color: color(calificacion);
+                }
+            }
+            .iconos{
+                @include flex();
+                img{
+                    width: 2.5rem;
+                    height: 2.5rem;
+                    margin: 0 1rem;
+                }
+                p{
+                    font-size: text-size(texto);
+                }
+            }
+            h4{
+                font-size: text-size(subtitulo);
+            }
+            p{
+                font-size: text-size(texto);
+                span{
+                    font-weight: bold;
+                }
+            }
+        }
+        .derecha__detallado{
+            margin: 2rem;
+            width: 30%;
+            border-left: solid 3px rgb(202, 202, 202);
+            @include flex(column);
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: text-size(texto);
+            @media screen and (max-width: 992px){
+                width: 70%;
+                border: white;
+                align-self: center;
+            }
+            a{
+                font-size: text-size(texto);
+            }
+        }
     }
 }

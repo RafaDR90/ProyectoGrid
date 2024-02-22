@@ -42,8 +42,9 @@
 
 </head>
 <body id="app">
+
     <header>
-        
+  <!-- Parte de arriba del nav -->      
         <nav class="navbar navbar-light bg-degradado">
             <div class="container-fluid">
                 <div class="navbar-brand">
@@ -55,6 +56,7 @@
                 </button>
             </div>
         </nav>
+        <!-- Cuando expandes el nav -->
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-transparent p-4">
                 <button class="btn btn-link btn-lg btn-hover text-dark h4">Catalogo</button>
@@ -62,6 +64,8 @@
                 <button class="btn btn-link btn-lg btn-hover text-dark h4">Acerca de</button>
             </div>
         </div>
+        <!-- Fin de expansion -->
+    <!-- Parte de abajo del nav -->
         <div class="container-fluid nav2">
             <div class="row align-items-center">
                 <div class="col-md-1 col-4">
@@ -104,17 +108,19 @@
                 </div>
             </div>
         </div>
+        <!-- Fin de la parte de abajo del nav -->
         
         
     </header>
     <main>
-
+<!-- Seccion con imagen grande y logo -->
         <section class="img__container--hero">
             <img src="./Img/fondo1.jpg" alt="Fondo de una casa">
             <img src="./Img/logo-removebg-preview.png" class="display-1 img"></img>
         </section>
+<!-- Fin seccion -->
 
-
+<!-- seccion con informacion sobre nosotros -->
         <section class="Info__principal__section">
             <div class="container">
                 <h2 class="titulo">HOME LUXURY</h2>
@@ -125,8 +131,9 @@
                   </div>
             </div>
         </section>
-
+<!-- Fin seccion -->
         
+<!-- Seccion con las categorias -->
         <section class="categorias__section">
             <div>
                 <button onclick="verDetalle()">
@@ -182,6 +189,9 @@
                 </button>
             </div>
         </section>
+<!-- Fin seccion -->
+
+<!-- Seccion con las casas rating -->
         <section class="rating__section">
             <h2>Opiniones</h2>
             <div class="clasificacion">
@@ -255,76 +265,78 @@
                     </div>
                 </div>
             </section>
-        <hr>
+            <hr>
+<!-- Fin seccion -->
         
-        
+<!-- Seccion de nuestros empleados -->
         <section class="section__flip--cards" id="flip_cards__section">
             
-            <h2 class="titulo__section">
-              Somos profesionales
-            </h2>
+          <h2 class="titulo__section">
+            Somos profesionales
+          </h2>
 
-            <div class="row__container">
-              <div class="card__flip">
-                <div class="card__side card__side--front-1">
-                </div>
-                <div class="card__side card__side--back card__side--back-1">
-                  
-                    <h4 class="card__heading">Antonio</h4>
-                  <div class="card__details">
-                    <ul>
-                      <li>Agente inmobiliario</li>
-                      <li>Acesor financiero</li>
-                      <li>Coordinador de alquileres</li>
-                    </ul>
-                  </div>
-
-                </div>
+          <div class="row__container">
+            <div class="card__flip">
+              <div class="card__side card__side--front-1">
               </div>
-      
-            
-              <div class="card__flip">
-                <div class="card__side card__side--front-2">
+              <div class="card__side card__side--back card__side--back-1">
+                
+                  <h4 class="card__heading">Antonio</h4>
+                <div class="card__details">
+                  <ul>
+                    <li>Agente inmobiliario</li>
+                    <li>Acesor financiero</li>
+                    <li>Coordinador de alquileres</li>
+                  </ul>
                 </div>
-                <div class="card__side card__side--back card__side--back-2">
-                  <div class="card__title card__title--2">
-                    <h4 class="card__heading">Maria Jose</h4>
-                  </div>
-                  <div class="card__details">
-                    <ul>
-                      <li>Asistente de agente inmobiliario</li>
-                      <li>Especialista en desarrollo de propiedade</li>
-                      <li>Inspector de propiedades</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-           
 
-             
-              <div class="card__flip">
-                <div class="card__side card__side--front-3">
-                </div>
-                <div class="card__side card__side--back card__side--back-3">
-                  <div class="card__title">
-                    <h4 class="card__heading">Pepe</h4>
-                  </div>
-    
-                  <div class="card__details">
-                    <ul>
-                      <li>Abogado especializado en bienes raíces</li>
-                      <li>Especialista en desarrollo de propiedades</li>
-                      <li>Analista inmobiliario</li>
-                    </ul>
-                  </div>
-                </div>
               </div>
-
             </div>
-            
-          </section>
+    
+          
+            <div class="card__flip">
+              <div class="card__side card__side--front-2">
+              </div>
+              <div class="card__side card__side--back card__side--back-2">
+                <div class="card__title card__title--2">
+                  <h4 class="card__heading">Maria Jose</h4>
+                </div>
+                <div class="card__details">
+                  <ul>
+                    <li>Asistente de agente inmobiliario</li>
+                    <li>Especialista en desarrollo de propiedade</li>
+                    <li>Inspector de propiedades</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           
 
+            
+            <div class="card__flip">
+              <div class="card__side card__side--front-3">
+              </div>
+              <div class="card__side card__side--back card__side--back-3">
+                <div class="card__title">
+                  <h4 class="card__heading">Pepe</h4>
+                </div>
+  
+                <div class="card__details">
+                  <ul>
+                    <li>Abogado especializado en bienes raíces</li>
+                    <li>Especialista en desarrollo de propiedades</li>
+                    <li>Analista inmobiliario</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </section>
+<!-- Fin seccion -->
+
+<!-- Seccion de las casas de prestigio mostradas con grid-->
           <section class="grid__section">
             <h2>Casas de prestigio</h2>
             <div class="gridImg__section container">
@@ -351,8 +363,9 @@
               </div>
             </div>
           </section>
+<!-- Fin seccion -->
           
-
+<!-- Seccion de los lugares de interes (cards) -->
           <section class="cards__section container">
             <h2>Lugares de interes</h2>
             <div class="cards__container">
@@ -394,11 +407,12 @@
             </div>
           </section>
         
+<!-- Fin seccion -->
         
         
     </main>
 
-
+<!-- seccion casas de determinada categoria (oculta hasta que se selecciona categoria) -->
     <div class="vistaDetalle">
       <h2>Resultados: 3</h2>
         <div class="card__detalle">
@@ -497,7 +511,9 @@
           </div>
         </div>
     </div>
+<!-- Fin seccion -->
 
+<!-- Seccion de detalle de la casa seleccionada -->
     <section class="detallado__section">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
@@ -525,9 +541,51 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+      <div class="info__detallado--container">
+        <div class="izquierda__detallado">
+          <h2>Casa junto al mar</h2>
+          <div class="clasificacion__detallado">
+            <p>★</p>
+            <p>★</p>
+            <p>★</p>
+            <p>★</p>
+            <p>★</p>
+        </div>
+        
+        <div class="iconos">
+          <div class="icono">
+            <img src="./Img/personas.png" alt="Icono persona">
+          </div>
+          <p>3</p>
+          <div class="icono">
+            <img src="./Img/cama.png" alt="Icono cama">
+          </div>
+          <p>2</p>
+        </div>
+        <h4>Descripción</h4>
+        <p>Sumérgete en la belleza del océano con esta encantadora casa junto al mar. Con impresionantes vistas y acceso directo a la playa, es el lugar perfecto para relajarte y disfrutar del sonido de las olas.</p>
+        <h4>Instalaciones</h4>
+        <p>La casa cuenta con todas las comodidades y servicios que necesitas para disfrutar al máximo.</p>
+        <h4>Comodidades</h4>
+        <p>Disfruta de una estancia inolvidable en esta espectacular casa de lujo, ubicada en un entorno tranquilo y rodeada de naturaleza.</p>
+        <h4>Tarifas</h4>
+        <p>Desde <span class="text-success">$200/noche</span></p>
+        </div>
+        <div class="derecha__detallado">
+          <a href="#" class="btn btn-dark">Comprueba disponibilidad</a>
+          <p>Habla con un profesional</p>
+          <p class="text-success">+34 684 494 329</p>
+          <p>o</p>
+          <a class="btn btn-dark">Envía formulario</a>
+        </div>
+        
+      </div>
+
     </section>
 
+<!-- Fin seccion -->
 
+<!-- Footer -->
     <footer>
       <div class="izq">
         <h2>Luxury villas</h2>
@@ -551,8 +609,9 @@
         </div>
       </div>
     </footer>
-    
-    
+  <!-- Fin footer -->
+
+  <!-- Magia -->  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="module">
         const carouselItems = document.querySelectorAll('.carousel__item');
@@ -576,8 +635,7 @@
           const offset = -currentIndex * 100;
           document.querySelector('.carousel__container').style.transform = `translateX(${offset}%)`;
         }
-
-        
     </script>
+  <!-- Fin magia -->
 </body>
 </html>

@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+p, a{
+    font-size: text-size(texto);
+}
+
+h2{
+    font-size: text-size(subtitulo);
+    font-weight: bold;
+}
