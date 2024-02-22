@@ -1,5 +1,4 @@
 .Info__principal__section{
-    
     min-height: calc(15rem + 10vw);
     div{
         @include flex(column);
@@ -13,7 +12,7 @@
             margin: 0;
         }
         div{
-            width: 80%;
+            width: 100%;
             @include flex(column);
             gap: 1px;
             h2{

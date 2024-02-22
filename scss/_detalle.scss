@@ -1,0 +1,20 @@
+.vistaDetalle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: solid 1px black;
+    .card__detalle{
+        border: solid 1px rebeccapurple;
+        width: 80%;
+        @include flex(row);
+    }
+    h2{
+
+    }
+    .altura{
+        height: 14rem;
+    }
+    
+}

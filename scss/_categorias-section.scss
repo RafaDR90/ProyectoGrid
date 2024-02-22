@@ -1,4 +1,5 @@
 .categorias__section{
+    width: 100%;
     div{
         @include flex(row);
         flex-wrap: wrap;
@@ -18,19 +19,26 @@
                 top: 0;
                 position: absolute;
             }
-            width: 24.54vw;
-            height: 24.54vw;
+            width: 20.54vw;
+            height: 20.54vw;
             @media screen and (max-width: 767px) {
                 width: 48.79vw;
                 height: 48.79vw;
             }
             .container_logoYTitulo{
+                background-color: rgba(255, 255, 255, 0.429);
+                z-index: 0;
+                padding: 5px;
+                border-radius: 10px;
                 @include flex(row);
                 align-items: top;
                 justify-content: start;
-                margin-left: 20%;
-                width: 100%;
-                height: 60%;
+                margin-left: 10px;
+                margin-right: auto;
+                margin-top: 10px;
+                margin-bottom: auto;
+                width: max-content;
+                height: max-content;
                 .icon__container{
                     position: relative;
                     width: calc(1.5rem + 1vw); 

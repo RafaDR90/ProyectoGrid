@@ -18,6 +18,13 @@
           }).mount('#app');
         };
     </script>
+    <script>
+
+      function verDetalle() {
+        //redirigo a detalle.html
+        window.location.href = "detalle.html";
+      }
+  </script>
     <link rel="stylesheet" href="./css/styles.css">
    
     
@@ -93,7 +100,7 @@
 
         <section class="img__container--hero">
             <img src="./Img/fondo1.jpg" alt="Fondo de una casa">
-            <img src="./Img/logo-removebg-preview.png" class="display-1 img">Home luxury</img>
+            <img src="./Img/logo-removebg-preview.png" class="display-1 img"></img>
         </section>
 
 
@@ -101,17 +108,17 @@
             <div class="container">
                 <h2 class="titulo">HOME LUXURY</h2>
                 <div>
-                    <h2>¿Por qué elegirnos?</h2>
-                    <p>En Home Luxury nos esforzamos por brindarte la mejor experiencia durante tu estancia. Nuestro compromiso es proporcionarte no solo un lugar donde alojarte, sino un verdadero hogar lejos de casa. Nos destacamos por ofrecer las mejores casas y residencias de lujo, cuidadosamente seleccionadas para asegurarnos de que cada detalle cumpla con los más altos estándares de calidad y confort.</p>
-                    <p>Entendemos que tus vacaciones son un momento especial, un tiempo para relajarte y disfrutar de momentos inolvidables. Es por eso que nos dedicamos a ofrecerte propiedades exclusivas que te permitan hacer precisamente eso: disfrutar al máximo. Ya sea que estés buscando una escapada tranquila junto al mar, un retiro en la montaña o un oasis urbano, tenemos la casa perfecta para ti.</p>    
-                </div>
+                    <p class="collapse" id="texto-collapse">En Home Luxury nos esforzamos por brindarte la mejor experiencia durante tu estancia. Nuestro compromiso es proporcionarte no solo un lugar donde alojarte, sino un verdadero hogar lejos de casa. Nos destacamos por ofrecer las mejores casas y residencias de lujo, cuidadosamente seleccionadas para asegurarnos de que cada detalle cumpla con los más altos estándares de calidad y confort.<br><br>
+                    Entendemos que tus vacaciones son un momento especial, un tiempo para relajarte y disfrutar de momentos inolvidables. Es por eso que nos dedicamos a ofrecerte propiedades exclusivas que te permitan hacer precisamente eso: disfrutar al máximo. Ya sea que estés buscando una escapada tranquila junto al mar, un retiro en la montaña o un oasis urbano, tenemos la casa perfecta para ti.</p>    
+                    <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#texto-collapse" aria-expanded="false" aria-controls="texto-collapse">¿Por qué elegirnos?</button>
+                  </div>
             </div>
         </section>
 
         
         <section class="categorias__section">
             <div>
-                <button>
+                <button onclick="verDetalle()">
                     <img src="./Img/seccionFamilia.jpg" alt="">
                     <div class="container_logoYTitulo">
                         <div class="icon__container">
@@ -380,6 +387,10 @@
         
     </main>
 
+
+    
+
+
     <footer>
       <div class="izq">
         <h2>Luxury villas</h2>
@@ -428,6 +439,8 @@
           const offset = -currentIndex * 100;
           document.querySelector('.carousel__container').style.transform = `translateX(${offset}%)`;
         }
+
+        
     </script>
 </body>
 </html>
