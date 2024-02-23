@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de casas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./app.js">
+        import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        import app from './app.js';
+      
+        window.onload = () => {
+          createApp({
+            components: {
+              app,
+            },
+          }).mount('#app');
+        };
+    </script>
+    <script>
+
+      function verDetalle() {
+        const main = document.getElementsByTagName('main');
+        const vistaDetalle = document.getElementsByClassName('vistaDetalle');
+        const nav2 = document.getElementsByClassName('nav2');
+        vistaDetalle[0].style.display = 'flex';
+        main[0].style.display = 'none';
+        nav2[0].style.position = 'relative'; 
+      }
+      function verDetallado(){
+        const vistaDetalle = document.getElementsByClassName('vistaDetalle');
+        const detallado= document.getElementsByClassName('detallado__section');
+        vistaDetalle[0].style.display = 'none';
+        detallado[0].style.display = 'flex';
+        
+      }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.min.css">
+   
+    
+
+</head>
+<body id="app">
+
+    <header>
+  <!-- Parte de arriba del nav -->      
+        <nav class="navbar navbar-light bg-degradado">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="./Img/logo.png" alt="Logo" class="logo-img">
+                </div>
+                <h1>Home luxury</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- Cuando expandes el nav -->
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-transparent p-4">
+                <button class="btn btn-link btn-lg btn-hover text-dark h4">Catalogo</button>
+                <button class="btn btn-link btn-lg btn-hover text-dark h4">Contacto</button>
+                <button class="btn btn-link btn-lg btn-hover text-dark h4">Acerca de</button>
+            </div>
+        </div>
+        <!-- Fin de expansion -->
+    <!-- Parte de abajo del nav -->
+        <div class="container-fluid nav2">
+            <div class="row align-items-center">
+                <div class="col-md-1 col-4">
+                    <div class="d-flex align-items-center">
+                        <img src="./Img/sol.png" alt="Sol" class="iconoSol img-thumbnail">
+                        <p class="m-0 ms-2">25°</p>
+                    </div>
+                </div>
+                <div class="col-md-1 col-4">
+                    <div class="d-flex align-items-center">
+                        <img src="./Img/calendario.png" alt="Calendario" class="img-thumbnail">
+                        <p class="m-0 ms-2">11/02</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="d-flex align-items-center">
+                        <img src="./Img/relo.png" alt="Reloj" class="img-thumbnail">
+                        <p class="m-0 ms-2">11:00</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-12 mb-3 mb-md-0">
+                    <p>Llegada</p>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-2 col-12 mb-3 mb-md-0">
+                    <p>Salida</p>
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-2 col-12 mb-3 mb-md-0">
+                    <p>Habitaciones</p>
+                    <select name="habitaciones" id="habitaciones" class="form-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="col-md-2 col-12">
+                    <button class="btn btn-dark mt-4 mb-3">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Fin de la parte de abajo del nav -->
+        
+        
+    </header>
+    <main>
+<!-- Seccion con imagen grande y logo -->
+        <section class="img__container--hero">
+            <img src="./Img/fondo1.jpg" alt="Fondo de una casa">
+            <img src="./Img/logo-removebg-preview.png" class="display-1 img"></img>
+        </section>
+<!-- Fin seccion -->
+
+<!-- seccion con informacion sobre nosotros -->
+        <section class="Info__principal__section">
+            <div class="container">
+                <h2 class="titulo">HOME LUXURY</h2>
+                <div>
+                    <p class="collapse" id="texto-collapse">En Home Luxury nos esforzamos por brindarte la mejor experiencia durante tu estancia. Nuestro compromiso es proporcionarte no solo un lugar donde alojarte, sino un verdadero hogar lejos de casa. Nos destacamos por ofrecer las mejores casas y residencias de lujo, cuidadosamente seleccionadas para asegurarnos de que cada detalle cumpla con los más altos estándares de calidad y confort.<br><br>
+                    Entendemos que tus vacaciones son un momento especial, un tiempo para relajarte y disfrutar de momentos inolvidables. Es por eso que nos dedicamos a ofrecerte propiedades exclusivas que te permitan hacer precisamente eso: disfrutar al máximo. Ya sea que estés buscando una escapada tranquila junto al mar, un retiro en la montaña o un oasis urbano, tenemos la casa perfecta para ti.</p>    
+                    <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#texto-collapse" aria-expanded="false" aria-controls="texto-collapse">¿Por qué elegirnos?</button>
+                  </div>
+            </div>
+        </section>
+<!-- Fin seccion -->
+        
+<!-- Seccion con las categorias -->
+        <section class="categorias__section">
+            <div>
+                <button onclick="verDetalle()">
+                    <img src="./Img/seccionFamilia.jpg" alt="">
+                    <div class="container_logoYTitulo">
+                        <div class="icon__container">
+                            <img src="./Img/casa_icon.png" alt="Casa 1" class="logo-img">
+                        </div>
+                        <h3>Familia</h3>
+                    </div>
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra seccion de casas familiares para poder disfrutar con los tuyos</p>
+                    </div>
+                </button>
+
+                <button  onclick="verDetalle()">
+                    <img src="./Img/seccionLujo.jpg" alt="">
+                    <div class="container_logoYTitulo">
+                        <div class="icon__container">
+                            <img src="./Img/diamante.png" alt="Casa 1" class="logo-img">
+                        </div>
+                        <h3>Lujo</h3>
+                    </div>
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra seccion de casas equipadas con el maximo de lujo para poder disfrutar con los tuyos</p>
+                    </div>
+                </button>
+
+                <button  onclick="verDetalle()">
+                    <img src="./Img/seccionAventura.jpg" alt="">
+                    <div class="container_logoYTitulo">
+                        <div class="icon__container">
+                            <img src="./Img/castillo.png" alt="Casa 1" class="logo-img">
+                        </div>
+                        <h3>Aventuras</h3>
+                    </div>
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra seccion de casas destinadas a la aventura donde podras disfrutar de momentos inolvidables</p>
+                    </div>
+                </button>
+
+                <button onclick="verDetalle()">
+                    <img src="./Img/seccionMontana.jpg" alt="">
+                    <div class="container_logoYTitulo">
+                        <div class="icon__container">
+                            <img src="./Img/pino.png" alt="Casa 1" class="logo-img">
+                        </div>
+                        <h3>Montaña</h3>
+                    </div>
+                    <div class="hover-content container">
+                        <p>Disfruta de nuestra sección de casas de montaña donde podrás disfrutar de la naturaleza en su máximo esplendor</p>
+                    </div>
+                </button>
+            </div>
+        </section>
+<!-- Fin seccion -->
+
+<!-- Seccion con las casas rating -->
+        <section class="rating__section">
+            <h2>Opiniones</h2>
+            <div class="clasificacion">
+                <p>★</p>
+                <p>★</p>
+                <p>★</p>
+                <p>★</p>
+                <p>★</p>
+            </div>
+            <div class="carousel__container">
+                <input type="radio" name="position" checked />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <input type="radio" name="position" />
+                <div id="carousel">
+                    <div class="item">
+                        <p class="nombreUsuario">Rafael Delgado</p>
+                        <p class="comentario">Excelente servicio, la casa estaba en perfectas condiciones y la atención fue inmejorable. Sin duda volveré a reservar con ellos.</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">María Fernández</p>
+                        <p class="comentario">Una experiencia maravillosa. La casa era espectacular y el personal muy amable. Definitivamente, ¡recomendado!</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">Alejandro Gutiérrez</p>
+                        <p class="comentario">Increíble lugar. Nos encantó cada detalle de la casa y el entorno. Sin duda, volveremos en nuestro próximo viaje.</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">Laura Martínez</p>
+                        <p class="comentario">¡Qué estancia tan agradable! Todo estaba limpio y bien organizado. El equipo de atención al cliente fue excelente.</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="nombreUsuario">Javier López</p>
+                        <p class="comentario">Una casa impresionante y un servicio impecable. Disfrutamos cada momento de nuestra estancia. ¡Altamente recomendado!</p>
+                        <div class="clasificacion_peque">
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                            <p>★</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <hr>
+<!-- Fin seccion -->
+        
+<!-- Seccion de nuestros empleados -->
+        <section class="section__flip--cards" id="flip_cards__section">
+            
+          <h2 class="titulo__section">
+            Somos profesionales
+          </h2>
+
+          <div class="row__container">
+            <div class="card__flip">
+              <div class="card__side card__side--front-1">
+              </div>
+              <div class="card__side card__side--back card__side--back-1">
+                
+                  <h4 class="card__heading">Antonio</h4>
+                <div class="card__details">
+                  <ul>
+                    <li>Agente inmobiliario</li>
+                    <li>Acesor financiero</li>
+                    <li>Coordinador de alquileres</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+    
+          
+            <div class="card__flip">
+              <div class="card__side card__side--front-2">
+              </div>
+              <div class="card__side card__side--back card__side--back-2">
+                <div class="card__title card__title--2">
+                  <h4 class="card__heading">Maria Jose</h4>
+                </div>
+                <div class="card__details">
+                  <ul>
+                    <li>Asistente de agente inmobiliario</li>
+                    <li>Especialista en desarrollo de propiedade</li>
+                    <li>Inspector de propiedades</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          
+
+            
+            <div class="card__flip">
+              <div class="card__side card__side--front-3">
+              </div>
+              <div class="card__side card__side--back card__side--back-3">
+                <div class="card__title">
+                  <h4 class="card__heading">Pepe</h4>
+                </div>
+  
+                <div class="card__details">
+                  <ul>
+                    <li>Abogado especializado en bienes raíces</li>
+                    <li>Especialista en desarrollo de propiedades</li>
+                    <li>Analista inmobiliario</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </section>
+<!-- Fin seccion -->
+
+<!-- Seccion de las casas de prestigio mostradas con grid-->
+          <section class="grid__section">
+            <h2>Casas de prestigio</h2>
+            <div class="gridImg__section container">
+              <div class="hijo1x1">
+                <img src="./Img/seccionAventura.jpg" alt="Casa 1">
+              </div>
+              <div class="hijo1x1">
+                <img src="./Img/seccionFamilia.jpg" alt="Casa 1">
+              </div>
+              <div class="hijo2x1">
+                <img src="./Img/seccionLujo.jpg" alt="Casa 1">
+              </div>
+              <div class="hijo1x2">
+                <img src="./Img/bvvvfce566a427cba5d592e19a44c058472.jpg" alt="Casa 1">
+              </div>
+              <div class="hijo1x1">
+                <img src="./Img/casas-de-lujo-santa-barbara.jpg" alt="Casa 1">
+              </div>
+              <div class="hijo2x2">
+                <img src="./Img/seccionMontana.jpg" alt="Casa 1">
+              </div>
+              <div class="hijo1x1">
+                <img src="./Img/av_182045.webp" alt="Casa 1">
+              </div>
+            </div>
+          </section>
+<!-- Fin seccion -->
+          
+<!-- Seccion de los lugares de interes (cards) -->
+          <section class="cards__section container">
+            <h2>Lugares de interes</h2>
+            <div class="cards__container">
+              <div class="miCard">
+                <div class="card__img">
+                  <img src="./Img/casas-de-lujo-santa-barbara.jpg" alt="Parque">
+                </div>
+                <h3>Lujo</h3>
+                <p>Disfruta con el maximo de lujo en nuestras casas equipadas con el maximo de lujo para una escapada romantica</p>
+                <a href="#" class="">Ver más</a>
+              </div>
+
+              <div class="miCard">
+                <div class="card__img">
+                  <img src="./Img/bvvvfce566a427cba5d592e19a44c058472.jpg" alt="Parque">
+                </div>
+                <h3>Lujo & Naturaleza</h3>
+                <p>Experimenta lo mejor de ambos mundos: lujo y naturaleza, en nuestras exclusivas casas diseñadas para ofrecerte una escapada única y rejuvenecedora.</p>
+                <a href="#" class="">Ver más</a>
+              </div>
+
+              <div class="miCard">
+                <div class="card__img">
+                  <img src="./Img/gran-villa-portada-kjj--1200x630@abc.webp" alt="Parque">
+                </div>
+                <h3>Familiar</h3>
+                <p>Disfruta de momentos inolvidables en nuestras acogedoras casas familiares, diseñadas para brindarte comodidad y diversión para toda la familia.</p>
+                <a href="#" class="">Ver más</a>
+              </div>
+
+              <div class="miCard">
+                <div class="card__img">
+                  <img src="./Img/seccionAventura.jpg" alt="Parque">
+                </div>
+                <h3>Naturaleza</h3>
+                <p>Sumérgete en la belleza natural de nuestras casas rodeadas de paisajes impresionantes.</p>
+                <a href="#" class="">Ver más</a>
+              </div>
+            </div>
+          </section>
+        
+<!-- Fin seccion -->
+        
+        
+    </main>
+
+<!-- seccion casas de determinada categoria (oculta hasta que se selecciona categoria) -->
+    <div class="vistaDetalle">
+      <h2>Resultados: 3</h2>
+        <div class="card__detalle">
+          <div id="carouselExampleControls1" class="carousel slide w-25 contenedor__imagenes" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active altura">
+                <img src="./Img/casas-de-lujo-santa-barbara.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+              <div class="carousel-item altura">
+                <img src="./Img/lujo2.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+              <div class="carousel-item altura">
+                <img src="./Img/lujo3.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="datos__item">
+            <h3>Casa de lujo</h3>
+            <p>Disfruta de una estancia inolvidable en esta espectacular casa de lujo, ubicada en un entorno tranquilo y rodeada de naturaleza. La casa cuenta con todas las comodidades y servicios que necesitas para disfrutar al máximo.</p>
+            <div>  
+              <p>Desde <span>$200/noche</span></p>
+              <button class="btn btn-dark" onclick="verDetallado()">Detalle</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card__detalle">
+          <div id="carouselExampleControls2" class="carousel slide w-25 contenedor__imagenes" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active altura">
+                <img src="./Img/mar1.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+              <div class="carousel-item altura">
+                <img src="./Img/mar2.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+              <div class="carousel-item altura">
+                <img src="./Img/mar3.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="datos__item">
+            <h3>Casa junto al mar</h3>
+            <p>Sumérgete en la belleza del océano con esta encantadora casa junto al mar. Con impresionantes vistas y acceso directo a la playa, es el lugar perfecto para relajarte y disfrutar del sonido de las olas.</p>
+          <div>  
+              <p>Desde <span>$200/noche</span></p>
+              <button class="btn btn-dark" onclick="verDetallado()">Detalle</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card__detalle">
+          <div id="carouselExampleControls3" class="carousel slide w-25 contenedor__imagenes" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active altura">
+                <img src="./Img/montana1.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+              <div class="carousel-item altura">
+                <img src="./Img/montana2.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+              <div class="carousel-item altura">
+                <img src="./Img/montana3.jpg" class="d-block w-100 h-100" alt="foto de la casa">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="datos__item">
+            <h3>Casa en la montaña</h3>
+            <p>Escapa del bullicio de la ciudad y encuentra paz y tranquilidad en esta acogedora casa en la montaña. Rodeada de exuberante vegetación y senderos naturales, es el destino ideal para los amantes del aire libre.</p>
+          <div>  
+              <p>Desde <span>$200/noche</span></p>
+              <button class="btn btn-dark" onclick="verDetallado()">Detalle</button>
+            </div>
+          </div>
+        </div>
+    </div>
+<!-- Fin seccion -->
+
+<!-- Seccion de detalle de la casa seleccionada -->
+    <section class="detallado__section">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner intermediario">
+          <div class="carousel-item active img__container--detallado">
+            <img src="./Img/mar1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item img__container--detallado">
+            <img src="./Img/mar2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item img__container--detallado">
+            <img src="./Img/mar3.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <div class="info__detallado--container">
+        <div class="izquierda__detallado">
+          <h2>Casa junto al mar</h2>
+          <div class="clasificacion__detallado">
+            <p>★</p>
+            <p>★</p>
+            <p>★</p>
+            <p>★</p>
+            <p>★</p>
+        </div>
+        
+        <div class="iconos">
+          <div class="icono">
+            <img src="./Img/personas.png" alt="Icono persona">
+          </div>
+          <p>3</p>
+          <div class="icono">
+            <img src="./Img/cama.png" alt="Icono cama">
+          </div>
+          <p>2</p>
+        </div>
+        <h4>Descripción</h4>
+        <p>Sumérgete en la belleza del océano con esta encantadora casa junto al mar. Con impresionantes vistas y acceso directo a la playa, es el lugar perfecto para relajarte y disfrutar del sonido de las olas.</p>
+        <h4>Instalaciones</h4>
+        <p>La casa cuenta con todas las comodidades y servicios que necesitas para disfrutar al máximo.</p>
+        <h4>Comodidades</h4>
+        <p>Disfruta de una estancia inolvidable en esta espectacular casa de lujo, ubicada en un entorno tranquilo y rodeada de naturaleza.</p>
+        <h4>Tarifas</h4>
+        <p>Desde <span class="text-success">$200/noche</span></p>
+        </div>
+        <div class="derecha__detallado">
+          <a href="#" class="btn btn-dark">Comprueba disponibilidad</a>
+          <p>Habla con un profesional</p>
+          <p class="text-success">+34 684 494 329</p>
+          <p>o</p>
+          <a class="btn btn-dark">Envía formulario</a>
+        </div>
+        
+      </div>
+
+    </section>
+
+<!-- Fin seccion -->
+
+<!-- Footer -->
+    <footer>
+      <div class="izq">
+        <h2>Luxury villas</h2>
+        <a>Quienes somos</a>
+        <a>Contactanos</a>
+      </div>
+      <div class="med">
+        <h2>Descarga APP</h2>
+        <div class="imgs__container">
+          <img src="./Img/redes/apple.png" alt="App store">
+          <img src="./Img/redes/android.png" alt="Play store">
+        </div>
+      </div>
+      <div class="der">
+        <h2>Siguenos</h2>
+        <div class="imgs__container">
+          <img src="./Img/redes/facebook.jpg" alt="Facebook">
+          <img src="./Img/redes/instagram.jpg" alt="Instagram">
+          <img src="./Img/redes/twitter.jpg" alt="Twitter">
+          <img src="./Img/redes/pinterest.jpg" alt="Pinterest">
+        </div>
+      </div>
+    </footer>
+  <!-- Fin footer -->
+
+  <!-- Magia -->  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module">
+        const carouselItems = document.querySelectorAll('.carousel__item');
+        let currentIndex = 0;
+
+        document.querySelector('.carousel__prev').addEventListener('click', () => {
+          if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+          }
+        });
+
+        document.querySelector('.carousel__next').addEventListener('click', () => {
+          if (currentIndex < carouselItems.length - 1) {
+            currentIndex++;
+            updateCarousel();
+          }
+        });
+
+        function updateCarousel() {
+          const offset = -currentIndex * 100;
+          document.querySelector('.carousel__container').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+  <!-- Fin magia -->
+</body>
+</html>
